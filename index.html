@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Texas Weekend — Stockyards + Dallas</title>
+<meta property="og:title" content="Texas Weekend — Stockyards + Dallas (Jun 25–28, 2026)">
+<meta property="og:description" content="A long weekend in Texas. Boots, bourbon, rodeo, and BRESH.">
+<meta property="og:image" content="https://www.fortworthstockyards.org/sites/default/files/2022-04/FW%20Herd%20drive%20under%20sign%2013x19%20print%20no%20logo-_0.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&family=Rye&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --burnt: #8B3A1B;
+    --burnt-deep: #5C2410;
+    --tan: #C9A66B;
+    --tan-soft: #E6D3A8;
+    --cream: #F8F0DD;
+    --paper: #FBF6EC;
+    --dark: #1F1A17;
+    --gray: #5A4F47;
+    --gray-soft: #8a7d72;
+    --rose: #B85770;
+    --neon: #FF3DA0;
+    --shadow: 0 4px 24px rgba(31, 26, 23, 0.08);
+    --shadow-lg: 0 12px 48px rgba(31, 26, 23, 0.18);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--paper);
+    color: var(--dark);
+    line-height: 1.65;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { display: block; max-width: 100%; }
+
+  /* HERO with real photo */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    color: white;
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    padding: 60px 24px;
+    background-color: #2a1810;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background-image: url('https://www.fortworthstockyards.org/sites/default/files/2022-04/FW%20Herd%20drive%20under%20sign%2013x19%20print%20no%20logo-_0.jpeg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.45) saturate(1.1);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(255,61,160,0.18) 0%, transparent 50%),
+      linear-gradient(180deg, rgba(31,26,23,0.4) 0%, rgba(92,36,16,0.5) 50%, rgba(31,26,23,0.85) 100%);
+  }
+  .hero-inner { position: relative; z-index: 2; max-width: 920px; text-align: center; }
+  .hero-eyebrow {
+    font-family: 'Rye', serif;
+    font-size: 14px;
+    letter-spacing: 0.4em;
+    color: var(--tan);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(60px, 12vw, 144px);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    margin-bottom: 16px;
+    text-shadow: 0 4px 32px rgba(0,0,0,0.5);
+  }
+  .hero h1 .accent { color: var(--tan); font-style: italic; }
+  .hero-tagline {
+    font-size: clamp(18px, 2.2vw, 24px);
+    color: var(--tan-soft);
+    margin: 24px 0 40px;
+    font-weight: 400;
+    max-width: 700px;
+    margin-left: auto; margin-right: auto;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  }
+  .hero-meta {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;
+    margin-top: 32px;
+  }
+  .hero-chip {
+    background: rgba(0,0,0,0.4);
+    border: 1px solid rgba(201,166,107,0.5);
+    padding: 10px 18px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--tan-soft);
+    backdrop-filter: blur(12px);
+  }
+  .hero-chip strong { color: white; font-weight: 700; }
+  .scroll-cue {
+    position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+    color: var(--tan); font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase;
+    opacity: 0.8;
+    animation: bounce 2s infinite;
+    z-index: 2;
+  }
+  @keyframes bounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
+
+  /* LAYOUT */
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 80px 0; }
+  .section-eyebrow {
+    font-family: 'Rye', serif;
+    font-size: 12px;
+    letter-spacing: 0.35em;
+    color: var(--burnt);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--dark);
+    margin-bottom: 32px;
+    font-weight: 900;
+  }
+  h2 .accent { color: var(--burnt); font-style: italic; }
+  h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--dark);
+  }
+  p { margin-bottom: 16px; color: var(--gray); font-size: 17px; }
+  p.lead { font-size: 21px; line-height: 1.55; color: var(--dark); }
+  a { color: var(--burnt); text-decoration: none; transition: color 0.2s; }
+  a:hover { color: var(--burnt-deep); }
+
+  /* PHOTO STRIP under hero */
+  .photo-strip {
+    background: var(--dark);
+    padding: 0;
+    overflow: hidden;
+  }
+  .strip-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+  .strip-grid img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    transition: transform 0.6s;
+  }
+  .strip-grid img:hover { transform: scale(1.04); }
+  @media (max-width: 760px) { .strip-grid { grid-template-columns: repeat(2, 1fr); } .strip-grid img { height: 180px; } }
+
+  /* PITCH SECTION */
+  .pitch { background: var(--paper); }
+  .pitch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 48px;
+  }
+  .pitch-card {
+    background: white;
+    border-radius: 16px;
+    padding: 28px 24px;
+    box-shadow: var(--shadow);
+    border-top: 3px solid var(--burnt);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .pitch-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+  .pitch-card .icon { font-size: 36px; margin-bottom: 12px; display: block; }
+  .pitch-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--dark);
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+  .pitch-card p { font-size: 14px; margin: 0; line-height: 1.5; }
+
+  /* DAYS TIMELINE */
+  .days { background: linear-gradient(180deg, var(--paper) 0%, var(--cream) 100%); }
+  .day-card {
+    background: white;
+    border-radius: 20px;
+    margin-bottom: 32px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    border-left: 5px solid var(--burnt);
+    transition: transform 0.2s;
+  }
+  .day-card:hover { transform: translateX(4px); }
+  .day-card.party {
+    border-left-color: var(--neon);
+  }
+  .day-banner {
+    width: 100%;
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  .day-banner::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(31,26,23,0.1) 0%, rgba(31,26,23,0.6) 100%);
+  }
+  .day-banner-label {
+    position: absolute; bottom: 20px; left: 28px; right: 28px;
+    z-index: 2;
+    color: white;
+    font-family: 'Rye', serif;
+    font-size: 13px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  }
+  .day-body { padding: 32px 40px 40px; }
+  .day-header {
+    display: flex; justify-content: space-between; align-items: baseline;
+    flex-wrap: wrap; gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--tan-soft);
+  }
+  .day-tag {
+    font-family: 'Rye', serif;
+    font-size: 12px; letter-spacing: 0.3em;
+    color: var(--burnt);
+    text-transform: uppercase;
+  }
+  .day-card.party .day-tag { color: var(--neon); }
+  .day-card h3 { margin: 0; flex: 1; min-width: 280px; }
+  .day-date {
+    color: var(--gray-soft);
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .schedule { list-style: none; padding: 0; margin: 0; }
+  .schedule li {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 20px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(201,166,107,0.2);
+    align-items: start;
+  }
+  .schedule li:last-child { border-bottom: none; }
+  .time {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: var(--burnt);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding-top: 2px;
+  }
+  .day-card.party .time { color: var(--neon); }
+  .activity { color: var(--dark); font-size: 16px; line-height: 1.5; }
+  .activity strong { display: block; margin-bottom: 4px; font-weight: 700; }
+  .activity .meta { color: var(--gray-soft); font-size: 13px; margin-top: 4px; }
+  .activity a { font-weight: 600; border-bottom: 1px solid var(--tan); }
+
+  /* VENUES GRID — photo cards */
+  .venues { background: var(--paper); }
+  .venue-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+  }
+  .venue {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex; flex-direction: column;
+  }
+  .venue:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+  .venue-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background: #2a1810;
+  }
+  .venue-body { padding: 20px 22px 22px; flex: 1; display: flex; flex-direction: column; }
+  .venue-cat {
+    font-family: 'Rye', serif;
+    font-size: 10px;
+    color: var(--burnt);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .venue h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 8px;
+    line-height: 1.15;
+  }
+  .venue p { font-size: 14px; line-height: 1.55; margin: 0 0 14px; flex: 1; }
+  .venue-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--burnt);
+    font-weight: 600;
+    font-size: 14px;
+    border-bottom: 2px solid var(--tan);
+    align-self: flex-start;
+    padding-bottom: 2px;
+  }
+  .venue-link:hover { color: var(--burnt-deep); }
+
+  /* PARTY CALLOUT with photo background */
+  .party-callout {
+    position: relative;
+    color: white;
+    border-radius: 24px;
+    padding: 48px 40px;
+    margin: 40px 0;
+    overflow: hidden;
+  }
+  .party-callout-bg {
+    position: absolute; inset: 0;
+    background-image: url('https://silodallas.com/og-image.png');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.4) saturate(1.2);
+  }
+  .party-callout::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(42,15,29,0.7) 0%, rgba(184,87,112,0.5) 100%);
+  }
+  .party-callout > * { position: relative; z-index: 2; }
+  .party-callout .section-eyebrow { color: var(--neon); }
+  .party-callout h2 { color: white; margin-bottom: 16px; }
+  .party-callout h2 .accent { color: var(--neon); }
+  .party-callout p { color: rgba(255,255,255,0.95); font-size: 18px; }
+  .party-stack { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 32px; }
+  .party-stop {
+    background: rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    padding: 20px;
+    backdrop-filter: blur(12px);
+  }
+  .party-stop .stop-time { font-family: 'Rye', serif; color: var(--neon); font-size: 14px; margin-bottom: 6px; }
+  .party-stop h4 { font-family: 'Playfair Display', serif; color: white; font-size: 20px; margin-bottom: 6px; }
+  .party-stop p { color: rgba(255,255,255,0.85); font-size: 14px; margin: 0; }
+  .party-stop a { color: var(--neon); border-bottom: 1px solid rgba(255,61,160,0.4); }
+
+  /* HOTELS */
+  .hotels { background: var(--cream); }
+  .hotel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 32px; margin-top: 40px; }
+  .hotel {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .hotel:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+  .hotel-img { width: 100%; height: 260px; object-fit: cover; }
+  .hotel-body { padding: 28px 30px 30px; }
+  .hotel h3 { margin-bottom: 4px; }
+  .hotel .nights { color: var(--burnt); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; }
+  .hotel p { font-size: 15px; line-height: 1.55; }
+  .hotel .rate {
+    margin-top: 16px;
+    padding: 14px 18px;
+    background: var(--cream);
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--dark);
+  }
+  .hotel .rate strong { color: var(--burnt); }
+  .hotel-cta {
+    display: inline-block;
+    margin-top: 18px;
+    background: var(--burnt);
+    color: white !important;
+    padding: 12px 24px;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background 0.2s;
+  }
+  .hotel-cta:hover { background: var(--burnt-deep); }
+
+  /* BUDGET */
+  .budget { background: var(--paper); }
+  .budget-table {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    margin-top: 32px;
+  }
+  table { width: 100%; border-collapse: collapse; }
+  th {
+    background: var(--burnt);
+    color: white;
+    padding: 18px 24px;
+    text-align: left;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+  }
+  td { padding: 16px 24px; border-bottom: 1px solid var(--cream); font-size: 15px; color: var(--gray); }
+  td:first-child { color: var(--dark); font-weight: 600; }
+  td:last-child { text-align: right; font-weight: 600; color: var(--dark); font-variant-numeric: tabular-nums; }
+  tr:last-child td { border-bottom: none; background: var(--cream); font-weight: 700; color: var(--dark); font-size: 17px; }
+  tr:last-child td:last-child { color: var(--burnt); font-size: 18px; }
+
+  /* CHECKLIST */
+  .checklist { background: var(--cream); }
+  .check-grid { display: grid; gap: 14px; margin-top: 32px; }
+  .check-item {
+    display: grid;
+    grid-template-columns: 40px 1fr auto;
+    gap: 16px;
+    align-items: center;
+    background: white;
+    border-radius: 12px;
+    padding: 18px 24px;
+    box-shadow: 0 2px 8px rgba(31,26,23,0.04);
+    border-left: 3px solid var(--tan);
+  }
+  .check-num {
+    width: 36px; height: 36px;
+    background: var(--burnt);
+    color: white;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 14px;
+  }
+  .check-item strong { color: var(--dark); display: block; margin-bottom: 2px; }
+  .check-item a { color: var(--burnt); border-bottom: 1px dotted var(--tan); }
+  .check-item .desc { color: var(--gray); font-size: 14px; }
+  .check-item .badge {
+    background: var(--rose);
+    color: white;
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .check-item .badge.normal { background: var(--tan); color: var(--dark); }
+
+  /* TIPS */
+  .tips { background: var(--paper); }
+  .tip-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 32px; }
+  .tip {
+    background: white;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+  }
+  .tip .tip-icon { font-size: 24px; margin-bottom: 8px; display: block; }
+  .tip strong { color: var(--burnt); display: block; font-size: 16px; margin-bottom: 6px; }
+  .tip p { font-size: 14px; margin: 0; line-height: 1.55; }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark);
+    color: var(--tan-soft);
+    padding: 60px 24px 40px;
+    text-align: center;
+  }
+  footer h3 {
+    font-family: 'Rye', serif;
+    color: var(--tan);
+    font-size: 16px;
+    letter-spacing: 0.3em;
+    margin-bottom: 24px;
+  }
+  footer .sources {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 14px 28px;
+    max-width: 900px; margin: 0 auto 32px;
+  }
+  footer a {
+    color: var(--tan-soft) !important;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(201,166,107,0.3);
+  }
+  footer a:hover { color: var(--cream) !important; border-color: var(--tan); }
+  footer .signoff { color: var(--gray-soft); font-size: 13px; margin-top: 24px; }
+
+  /* RESPONSIVE */
+  @media (max-width: 640px) {
+    section { padding: 56px 0; }
+    .day-body { padding: 24px 24px 28px; }
+    .schedule li { grid-template-columns: 90px 1fr; gap: 12px; }
+    .party-callout { padding: 32px 24px; }
+    .check-item { grid-template-columns: 32px 1fr; }
+    .check-item .badge { grid-column: 2; justify-self: start; margin-top: 4px; }
+    .day-banner { height: 160px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">A Long Weekend in Texas</div>
+    <h1>Boots, <span class="accent">bourbon</span><br>& BRESH</h1>
+    <p class="hero-tagline">Fort Worth Stockyards. Cedar Springs. Drag brunch. Dry-aged ribeye. The country, the cunt, the chaos — all in 96 hours.</p>
+    <div class="hero-meta">
+      <div class="hero-chip"><strong>Thu Jun 25</strong> — Sun Jun 28, 2026</div>
+      <div class="hero-chip"><strong>4 people</strong> · LAX → DFW</div>
+      <div class="hero-chip"><strong>~$1,670</strong> per person, all in</div>
+    </div>
+  </div>
+  <div class="scroll-cue">Scroll for the goods ↓</div>
+</section>
+
+<!-- PHOTO STRIP -->
+<section class="photo-strip">
+  <div class="strip-grid">
+    <img src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,g_xy_center,h_360,q_65,w_640,x_4094,y_2239/v1/clients/asm-fortworth/2024_Cowtown_Coliseum_Money_Shot_005_dc24f31b-24fa-4c1e-8391-e9293f4c9f63.jpg" alt="Cowtown Coliseum bull rider" loading="lazy">
+    <img src="https://hoteldrover.com/app/uploads/2022/01/hannahwayphotography.com-19-1_frame2.png" alt="Hotel Drover Fort Worth Stockyards" loading="lazy">
+    <img src="https://cdn.prod.website-files.com/66465bc913953ef7afdae8b3/6646699b5262f1e1f6518bec_home-hats.webp" alt="White Elephant Saloon hats on ceiling" loading="lazy">
+    <img src="https://d7udpncdzgr1h.cloudfront.net/thejouledallas.com-1464425583/cms/cache/v2/626107f95b63d.jpeg/1200x630/fit/80/4d9cc97ccfe2d4227313a64334be1371.jpg" alt="The Joule Dallas" loading="lazy">
+  </div>
+</section>
+
+<!-- PITCH -->
+<section class="pitch">
+  <div class="wrap">
+    <div class="section-eyebrow">The Pitch</div>
+    <h2>Four nights. <span class="accent">Zero compromises.</span></h2>
+    <p class="lead">Two nights deep in the Fort Worth Stockyards — real cowboy heart of Texas. One night exploding across Dallas's Cedar Springs strip. The week of June 25–28 lines up perfectly: Stockyards Championship Rodeo Friday night, Scotty McCreery at Billy Bob's Saturday, and <strong>BRESH at SILO Dallas</strong> — the massive Argentine party brand — on the Saturday you happen to be in town.</p>
+    <div class="pitch-grid">
+      <div class="pitch-card">
+        <span class="icon">🤠</span>
+        <h4>Real-deal cowboy</h4>
+        <p>Longhorn cattle drive, indoor rodeo, the 1884 White Elephant Saloon.</p>
+      </div>
+      <div class="pitch-card">
+        <span class="icon">🥩</span>
+        <h4>Texas luxury</h4>
+        <p>Hotel Drover, Bricks & Horses, The Joule rooftop pool, 240-day dry-aged ribeye at Knife.</p>
+      </div>
+      <div class="pitch-card">
+        <span class="icon">💃</span>
+        <h4>The crazy party</h4>
+        <p>BRESH at SILO (DJ Mag Top 100), Round-Up Saloon two-stepping, S4 Rose Room drag.</p>
+      </div>
+      <div class="pitch-card">
+        <span class="icon">👑</span>
+        <h4>Sunday brunch</h4>
+        <p>Drag brunch at The Trove in Bishop Arts. A soft, sequined landing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VENUES PHOTO GRID -->
+<section class="venues">
+  <div class="wrap">
+    <div class="section-eyebrow">The Spots</div>
+    <h2>Where you'll <span class="accent">actually be.</span></h2>
+    <p class="lead">Every spot in the plan, with photos and direct links. Tap any card to go to the venue's official site or ticket page.</p>
+
+    <div class="venue-grid">
+
+      <a href="https://hoteldrover.com/" target="_blank" rel="noopener" class="venue">
+        <img class="venue-img" src="https://hoteldrover.com/app/uploads/2022/01/hannahwayphotography.com-19-1_frame2.png" alt="Hotel Drover" loading="lazy">
+        <div class="venue-body">
+          <div class="venue-cat">Hotel · Fort Worth</div>
+          <h4>Hotel Drover</h4>
+          <p>Rustic-luxe Marriott Autograph inside the Stockyards. Creekside lawn, fire pits, bourbon-soaked lobby bar.</p>
+          <span class="venue-link">hoteldrover.com →</span>
+        </div>
+      </a>
+
+      <a href="https://www.thejouledallas.com/" target="_blank" rel="noopener" class="venue">
+        <img class="venue-img" src="https://d7udpncdzgr1h.cloudfront.net/thejouledallas.com-1464425583/cms/cache/v2/626107f95b63d.jpeg/1200x630/fit/80/4d9cc97ccfe2d4227313a64334be1371.jpg" alt="The Joule Dallas" loading="lazy">
+        <div class="venue-body">
+          <div class="venue-cat">Hotel · Dallas</div>
+          <h4>The Joule</h4>
+          <p>Neo-gothic downtown landmark with the cantilevered rooftop pool hanging 8 ft over Main Street.</p>
+          <span class="venue-link">thejouledallas.com →</span>
+        </div>
+      </a>
+
+      <a href="https://www.cowtowncoliseum.com/" target="_blank" rel="noopener" class="venue">
+        <img class="venue-img" src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,g_xy_center,h_360,q_65,w_640,x_4094,y_2239/v1/clients/asm-fortworth/2024_Cowtown_Coliseum_Money_Shot_005_dc24f31b-24fa-4c1e-8391-e9293f4c9f63.jpg" alt="Cowtown Coliseum" loading="lazy">
+        <div class="venue-body">
+          <div class="venue-cat">Rodeo · Friday</div>
+          <h4>Cowtown Coliseum</h4>
+          <p>The world's first indoor rodeo arena. Stockyards Championship Rodeo, Fri Jun 26 @ 7:30pm.</p>
+          <span class="venue-link">cowtowncoliseum.com →</span>
+        </div>
+      </a>
+
+      <a href="https://www.billybobstexas.com/events" target="_blank" rel="noopener" class="venue">
+        <img class="venue-img" src="https://www.fortworthstockyards.org/sites/default/files/2022-04/Stokcyards%20Homepage%20Slider%20%3D%20bbt.jpeg" alt="Billy Bob's Texas" loading="lazy">
+        <div class="venue-body">
+          <div class="venue-cat">Honky-tonk · Fri + Sat</div>
+          <h4>Billy Bob's Texas</h4>
+          <p>World's largest honky-tonk. Scotty McCreery headlines Saturday Jun 27. Live country + bull riding inside.</p>
+          <span class="venue-link">billybobstexas.com →</span>
+        </div>
+      </a>
+
+      <a href="https://www.whiteelephantsaloon.com/" target="_blank" rel="noopener" class="venue">
+        <img class="venue-img" src="https://cdn.prod.website-files.com/66465bc913953ef7afdae8b3/6646699b5262f1e1f6518bec_home-hats.webp" alt="White Elephant Saloon" loading="lazy">
+        <div class="venue-body">
+          <div class="venue-cat">Saloon · Friday late</div>
+          <h4>White Elephant Saloon</h4>
+          <p>Fort Worth's oldest saloon, established 1884. Hundreds of cowboy hats nailed to the ceiling. Owned by Tim Love.</p>
+          <span class="venue-link">whiteelephantsaloon.com →</span>
+        </div>
+      </a>
+
+      <a href="https://www.joetgarcias.com/" target="_blank" rel="noopener" class="venue">
+        <img class="venue-img" src="https://images.squarespace-cdn.com/content/v1/6387d4f5186c68589699c113/9ea9a167-caa9-4288-860c-1a49f82587d7/7.21.22_Joe+T+Garcias_Onboarding+Shoot_Night_Outside+090.jpg" alt="Joe T. Garcia's" loading="lazy">
+        <div class="venue-body">
+          <div class="venue-cat">Tex-Mex · Thursday</div>
+          <h4>Joe T. Garcia's</h4>
+          <p>Tex-Mex institution since 1935. Garden patio with fountains. Cash only, no reservations, always worth the wait.</p>
+          <span class="venue-link">joetgarcias.com →</span>
+        </div>
+      </a>
+
+      <a href="https://www.fortworthstockyards.org/events/fort-worth-herd-twice-daily-cattle-drive" target="_blank" rel="noopener" class="venue">
+        <img class="venue-img" src="https://www.fortworthstockyards.org/sites/default/files/2022-04/FW%20Herd%20drive%20under%20sign%2013x19%20print%20no%20logo-_0.jpeg" alt="Fort Worth Herd cattle drive" loading="lazy">
+        <div class="venue-body">
+          <div class="venue-cat">Cattle drive · 11:30am</div>
+          <h4>The Fort Worth Herd</h4>
+          <p>World's only twice-daily longhorn cattle drive, right down East Exchange Avenue. Free, weather permitting.</p>
+          <span class="venue-link">fortworthstockyards.org →</span>
+        </div>
+      </a>
+
+      <a href="https://www.bowiehousehotel.com/dining/bricks-and-horses/" target="_blank" rel="noopener" class="venue">
+        <img class="venue-img" src="https://www.fortworthstockyards.org/sites/default/files/2022-04/Rodeo%20Lola.jpeg" alt="Bricks & Horses Texas steakhouse" loading="lazy">
+        <div class="venue-body">
+          <div class="venue-cat">Steakhouse · Friday 5:30pm</div>
+          <h4>Bricks & Horses</h4>
+          <p>Chophouse inside Bowie House (Auberge). Beef from Four Sixes &amp; Rosewood Ranch, charcoal oven. ~$120/pp.</p>
+          <span class="venue-link">bowiehousehotel.com →</span>
+        </div>
+      </a>
+
+      <a href="https://silodallas.com/events" target="_blank" rel="noopener" class="venue">
+        <img class="venue-img" src="https://silodallas.com/og-image.png" alt="SILO Dallas" loading="lazy">
+        <div class="venue-body">
+          <div class="venue-cat">Party · Saturday 9pm</div>
+          <h4>SILO Dallas · BRESH</h4>
+          <p>DJ Mag Top 100 club. BRESH (Argentine party brand) lands Sat Jun 27 @ 9pm. DAS sound, massive LED. ~$38.</p>
+          <span class="venue-link">silodallas.com →</span>
+        </div>
+      </a>
+
+      <a href="https://roundupsaloon.com/" target="_blank" rel="noopener" class="venue">
+        <img class="venue-img" src="https://roundupsaloon.com/wp-content/uploads/2022/03/Round-up-logo-touch-up-scaled.jpg" alt="Round-Up Saloon Dallas" loading="lazy" style="object-fit:contain; background:#1F1A17;">
+        <div class="venue-body">
+          <div class="venue-cat">Gay country bar · Sat late</div>
+          <h4>Round-Up Saloon</h4>
+          <p>The oldest and largest all-country gay bar in the U.S. Two-stepping, line dancing, cowboy hats. Cedar Springs.</p>
+          <span class="venue-link">roundupsaloon.com →</span>
+        </div>
+      </a>
+
+      <a href="https://www.station4dallas.com/" target="_blank" rel="noopener" class="venue">
+        <img class="venue-img" src="https://www.fortworthstockyards.org/sites/default/files/2022-04/Carolyn%20Brown%204.jpeg" alt="S4 Station 4 Rose Room drag" loading="lazy">
+        <div class="venue-body">
+          <div class="venue-cat">Drag club · Sat late</div>
+          <h4>S4 · Station 4</h4>
+          <p>24,000 sq ft of dance floor + the world-famous Rose Room drag theater. Right next to Round-Up on Cedar Springs.</p>
+          <span class="venue-link">station4dallas.com →</span>
+        </div>
+      </a>
+
+      <a href="https://www.thejouledallas.com/midnight-rambler" target="_blank" rel="noopener" class="venue">
+        <img class="venue-img" src="https://cdn.prod.website-files.com/66465bc913953ef7afdae8b3/664fe0fc419cc03d9c02d851_home-live-music-2.webp" alt="Live music nightcap" loading="lazy">
+        <div class="venue-body">
+          <div class="venue-cat">Cocktail bar · Soft landing</div>
+          <h4>Midnight Rambler</h4>
+          <p>Subterranean cocktail bar inside The Joule. Soft landing after Cedar Springs — you don't even leave the hotel.</p>
+          <span class="venue-link">midnightramblerbar.com →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- DAYS -->
+<section class="days">
+  <div class="wrap">
+    <div class="section-eyebrow">Day by Day</div>
+    <h2>The <span class="accent">itinerary</span></h2>
+
+    <!-- THURSDAY -->
+    <div class="day-card">
+      <div class="day-banner" style="background-image: url('https://images.squarespace-cdn.com/content/v1/6387d4f5186c68589699c113/9ea9a167-caa9-4288-860c-1a49f82587d7/7.21.22_Joe+T+Garcias_Onboarding+Shoot_Night_Outside+090.jpg');">
+        <div class="day-banner-label">Day One · Land & Ease In</div>
+      </div>
+      <div class="day-body">
+        <div class="day-header">
+          <h3>Thursday, June 25</h3>
+          <div class="day-date">Fly in · Stockyards check-in</div>
+        </div>
+        <ul class="schedule">
+          <li><span class="time">2:00 PM</span><span class="activity"><strong>Land at DFW</strong>Pick up the rental SUV (you want one — Stockyards to downtown Dallas is 45 min).</span></li>
+          <li><span class="time">3:30 PM</span><span class="activity"><strong>Check into <a href="https://hoteldrover.com/" target="_blank">Hotel Drover</a></strong>Drop bags, change into boots, grab a beer on the creekside lawn.</span></li>
+          <li><span class="time">7:00 PM</span><span class="activity"><strong>Dinner at <a href="https://www.joetgarcias.com/" target="_blank">Joe T. Garcia's</a></strong>Tex-Mex institution since 1935. Garden patio with fountains. Cash only, no reservations. Enchiladas and frozen margaritas.<span class="meta">~$35 / person</span></span></li>
+          <li><span class="time">10:00 PM</span><span class="activity"><strong>Nightcap at <a href="https://hoteldrover.com/dining/veranda-bar/" target="_blank">The Veranda</a></strong>Walk back to the Drover. Bourbon by the fire pits. Soft landing — tomorrow is the big one.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- FRIDAY -->
+    <div class="day-card">
+      <div class="day-banner" style="background-image: url('https://www.fortworthstockyards.org/sites/default/files/2022-04/FW%20Herd%20drive%20under%20sign%2013x19%20print%20no%20logo-_0.jpeg');">
+        <div class="day-banner-label">Day Two · Rodeo Day</div>
+      </div>
+      <div class="day-body">
+        <div class="day-header">
+          <h3>Friday, June 26</h3>
+          <div class="day-date">Cattle drive · Steaks · Rodeo · Honky-tonk</div>
+        </div>
+        <ul class="schedule">
+          <li><span class="time">9:00 AM</span><span class="activity"><strong>Breakfast at <a href="https://hoteldrover.com/dining/97-west-kitchen-and-bar/" target="_blank">97 West Kitchen</a></strong>Inside the Drover. Get the brisket hash.</span></li>
+          <li><span class="time">11:30 AM</span><span class="activity"><strong><a href="https://www.fortworthstockyards.org/events/fort-worth-herd-twice-daily-cattle-drive" target="_blank">Fort Worth Herd Cattle Drive</a></strong>The world's only twice-daily longhorn drive, right down East Exchange Avenue. Stand in front of the Livestock Exchange Building.<span class="meta">Free · weather permitting</span></span></li>
+          <li><span class="time">12:30 PM</span><span class="activity"><strong>Lunch at <a href="https://heimbbq.com/" target="_blank">Heim BBQ</a></strong>Order the bacon burnt ends. Non-negotiable.</span></li>
+          <li><span class="time">2:00 PM</span><span class="activity"><strong>Shop the Stockyards</strong><a href="https://leddys.com/" target="_blank">M.L. Leddy's</a> for custom boots, Maverick Western Wear, the Stockyards Saddle Shop.</span></li>
+          <li><span class="time">5:30 PM</span><span class="activity"><strong>Dinner at <a href="https://www.bowiehousehotel.com/dining/bricks-and-horses/" target="_blank">Bricks & Horses</a></strong>Bowie House's chophouse (Auberge property). Beef from Four Sixes Ranch &amp; Rosewood Ranch, cooked in a Mi Brasa charcoal oven.<span class="meta">~$120 / person · book on OpenTable now</span></span></li>
+          <li><span class="time">7:30 PM</span><span class="activity"><strong>🤠 <a href="https://www.axs.com/events/1161876/stockyards-championship-rodeo-6-26-tickets" target="_blank">STOCKYARDS CHAMPIONSHIP RODEO</a></strong>Cowtown Coliseum — the world's first indoor rodeo. Tie-down roping, barrel racing, bareback and bull riding.<span class="meta">~$25–$40 / person · buy on AXS</span></span></li>
+          <li><span class="time">10:00 PM</span><span class="activity"><strong><a href="https://www.billybobstexas.com/events" target="_blank">Billy Bob's Texas</a></strong>World's largest honky-tonk. Line dancing in the main hall, live country, bull riding inside the venue.</span></li>
+          <li><span class="time">Midnight</span><span class="activity"><strong><a href="https://www.whiteelephantsaloon.com/" target="_blank">White Elephant Saloon</a></strong>The 1884 cowboy saloon owned by chef Tim Love. Hundreds of cowboy hats nailed to the ceiling, raised wood dance floor.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SATURDAY — PARTY DAY -->
+    <div class="day-card party">
+      <div class="day-banner" style="background-image: url('https://silodallas.com/og-image.png');">
+        <div class="day-banner-label">Day Three · DEFCON 1</div>
+      </div>
+      <div class="day-body">
+        <div class="day-header">
+          <h3>Saturday, June 27</h3>
+          <div class="day-date">Dallas glow-up · BRESH · Cedar Springs</div>
+        </div>
+        <ul class="schedule">
+          <li><span class="time">10:00 AM</span><span class="activity"><strong>Slow breakfast at the Drover</strong>Pool, lawn time, hydrate. You'll need it.</span></li>
+          <li><span class="time">11:30 AM</span><span class="activity"><strong><a href="https://kimbellart.org/" target="_blank">Kimbell Art Museum</a></strong>Free admission, Louis Kahn building, world-class collection. ~1 hour.</span></li>
+          <li><span class="time">1:00 PM</span><span class="activity"><strong>Lunch at <a href="https://www.reata.net/" target="_blank">Reata</a></strong>Upscale ranch cuisine downtown Fort Worth. Get the tenderloin tamales.<span class="meta">~$40 / person</span></span></li>
+          <li><span class="time">3:00 PM</span><span class="activity"><strong>Drive to Dallas</strong>~45 min on I-30. Check into <a href="https://www.thejouledallas.com/" target="_blank">The Joule</a>.</span></li>
+          <li><span class="time">5:00 PM</span><span class="activity"><strong>Sunset on the rooftop pool</strong>The Joule's cantilevered glass deck hangs 8 ft over Main Street. This is the photo.</span></li>
+          <li><span class="time">7:00 PM</span><span class="activity"><strong>Early dinner at <a href="https://www.knifedallas.com/" target="_blank">Knife</a></strong>John Tesar's steakhouse in Highland Park. 240-day dry-aged ribeye, sharp service, in and out in 90 min so you can move.<span class="meta">~$140 / person · book on OpenTable for 7:00 PM sharp</span></span></li>
+        </ul>
+
+        <div class="party-callout">
+          <div class="party-callout-bg"></div>
+          <div class="section-eyebrow">The Crazy Party</div>
+          <h2>BRESH @ <span class="accent">SILO</span></h2>
+          <p>Argentina's wildest party brand has taken over Mexico City, Madrid, NYC, and Miami. They land at <strong>SILO Dallas</strong> — fresh on DJ Mag's Top 100 Clubs list — on the exact Saturday you're in town. DAS sound system, massive LED, mind-blowing energy. Doors 9pm. Tickets ~$38. 18+.</p>
+          <div class="party-stack">
+            <div class="party-stop">
+              <div class="stop-time">9:00 PM</div>
+              <h4>BRESH @ SILO</h4>
+              <p>15 min Uber from The Joule. <a href="https://silodallas.com/events" target="_blank">silodallas.com</a></p>
+            </div>
+            <div class="party-stop">
+              <div class="stop-time">12:30 AM</div>
+              <h4>Round-Up Saloon</h4>
+              <p>Country two-stepping in cowboy hats. <a href="https://roundupsaloon.com/" target="_blank">roundupsaloon.com</a></p>
+            </div>
+            <div class="party-stop">
+              <div class="stop-time">1:30 AM</div>
+              <h4>S4 / Rose Room</h4>
+              <p>World-famous drag theater. <a href="https://www.station4dallas.com/" target="_blank">station4dallas.com</a></p>
+            </div>
+            <div class="party-stop">
+              <div class="stop-time">2:30 AM</div>
+              <h4>JR's + Sue Ellen's</h4>
+              <p>Roll through the rest of The Strip.</p>
+            </div>
+          </div>
+        </div>
+
+        <ul class="schedule">
+          <li><span class="time">3:00 AM</span><span class="activity"><strong>Soft landing</strong>Late-night tacos on Cedar Springs, or <a href="https://www.thejouledallas.com/midnight-rambler" target="_blank">Midnight Rambler</a> cocktails in the basement of The Joule. Bed.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SUNDAY -->
+    <div class="day-card">
+      <div class="day-banner" style="background-image: url('https://images.squarespace-cdn.com/content/v1/6387d4f5186c68589699c113/ef994de7-5944-484c-8f20-e3c0ebcc81a0/Girls+Night+Out-182.jpg');">
+        <div class="day-banner-label">Day Four · Brunch & Home</div>
+      </div>
+      <div class="day-body">
+        <div class="day-header">
+          <h3>Sunday, June 28</h3>
+          <div class="day-date">Drag brunch · stroll · fly home</div>
+        </div>
+        <ul class="schedule">
+          <li><span class="time">10:30 AM</span><span class="activity"><strong>Drag brunch at The Trove (Bishop Arts)</strong>Sunday Funday drag brunch — Bishop Arts is the indie/cute neighborhood. À la carte menu, $15+ tickets.</span></li>
+          <li><span class="time">12:30 PM</span><span class="activity"><strong>Stroll Bishop Arts + Deep Ellum</strong>Indie shops and boutique scene in Bishop Arts. Quick swing through Deep Ellum for the murals.</span></li>
+          <li><span class="time">2:30 PM</span><span class="activity"><strong>Drive to DFW</strong>~25 min. Return the SUV.</span></li>
+          <li><span class="time">5:00 PM</span><span class="activity"><strong>Fly LAX</strong>Sleep on the plane. You earned it.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOTELS -->
+<section class="hotels">
+  <div class="wrap">
+    <div class="section-eyebrow">Where You're Sleeping</div>
+    <h2>Two hotels. <span class="accent">Two moods.</span></h2>
+    <div class="hotel-grid">
+      <div class="hotel">
+        <img class="hotel-img" src="https://hoteldrover.com/app/uploads/2022/01/hannahwayphotography.com-19-1_frame2.png" alt="Hotel Drover" loading="lazy">
+        <div class="hotel-body">
+          <h3>Hotel Drover</h3>
+          <div class="nights">Nights 1 & 2 · Autograph Collection · Fort Worth Stockyards</div>
+          <p>Rustic-luxe Marriott property inside the Stockyards itself. Leather, reclaimed wood, creekside lawn with fire pits, bourbon-soaked lobby bar called The Veranda. Walk to the rodeo, Billy Bob's, White Elephant — no Ubers, no parking.</p>
+          <div class="rate"><strong>~$430–$610/night</strong> in June. Two rooms for four.</div>
+          <a class="hotel-cta" href="https://hoteldrover.com/" target="_blank">Book at hoteldrover.com →</a>
+        </div>
+      </div>
+      <div class="hotel">
+        <img class="hotel-img" src="https://d7udpncdzgr1h.cloudfront.net/thejouledallas.com-1464425583/cms/cache/v2/626107f95b63d.jpeg/1200x630/fit/80/4d9cc97ccfe2d4227313a64334be1371.jpg" alt="The Joule Dallas" loading="lazy">
+        <div class="hotel-body">
+          <h3>The Joule</h3>
+          <div class="nights">Night 3 · Leading Hotels of the World · Downtown Dallas</div>
+          <p>Downtown Dallas swing for high-end. The cantilevered glass rooftop pool hangs 8 ft over Main Street — perfect Saturday sunset spot. Midnight Rambler cocktail bar lives in the basement. Walk to dinner, Uber to Cedar Springs in 8 min.</p>
+          <div class="rate"><strong>~$350–$450/night</strong> in June. Two rooms for four.</div>
+          <a class="hotel-cta" href="https://www.thejouledallas.com/" target="_blank">Book at thejouledallas.com →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUDGET -->
+<section class="budget">
+  <div class="wrap">
+    <div class="section-eyebrow">Per Person · All In</div>
+    <h2>The <span class="accent">numbers</span></h2>
+    <p class="lead">Conservative — built so a foursome at ~$1,500/pp can do every single thing on this list. Cutting the Dallas night saves ~$300/pp. Downgrading Hotel Drover to the Stockyards Hotel saves another ~$200/pp.</p>
+    <div class="budget-table">
+      <table>
+        <thead><tr><th>Item</th><th>Detail</th><th style="text-align:right;">Per person</th></tr></thead>
+        <tbody>
+          <tr><td>Flights LAX ↔ DFW</td><td>Round-trip · June is the cheapest month on this route</td><td>~$200</td></tr>
+          <tr><td>Hotel Drover</td><td>2 nights × 2 rooms × ~$500</td><td>~$500</td></tr>
+          <tr><td>The Joule</td><td>1 night × 2 rooms × ~$400</td><td>~$200</td></tr>
+          <tr><td>SUV rental + parking</td><td>4 days, full-size SUV</td><td>~$90</td></tr>
+          <tr><td>Rodeo + Billy Bob's</td><td>Tickets + covers</td><td>~$80</td></tr>
+          <tr><td>BRESH @ SILO</td><td>Sat night party tickets</td><td>~$45</td></tr>
+          <tr><td>Food (high-end + casual)</td><td>One splurge dinner per night + breakfasts/lunches</td><td>~$400</td></tr>
+          <tr><td>Drinks · covers · tips</td><td>Cedar Springs, White Elephant, brunch mimosas</td><td>~$150</td></tr>
+          <tr><td>TOTAL</td><td>Per person, all in</td><td>~$1,665</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CHECKLIST -->
+<section class="checklist">
+  <div class="wrap">
+    <div class="section-eyebrow">Book-Now Checklist</div>
+    <h2>In <span class="accent">this order.</span></h2>
+    <p class="lead">Hotel Drover, the rodeo, and BRESH are the only things that genuinely sell out. Everything else can flex.</p>
+    <div class="check-grid">
+      <div class="check-item"><div class="check-num">1</div><div><strong><a href="https://hoteldrover.com/" target="_blank">Hotel Drover</a></strong><span class="desc">2 rooms · Jun 25 + 26</span></div><span class="badge">Book today</span></div>
+      <div class="check-item"><div class="check-num">2</div><div><strong><a href="https://www.thejouledallas.com/" target="_blank">The Joule</a></strong><span class="desc">2 rooms · Jun 27</span></div><span class="badge">This week</span></div>
+      <div class="check-item"><div class="check-num">3</div><div><strong><a href="https://www.axs.com/events/1161876/stockyards-championship-rodeo-6-26-tickets" target="_blank">Stockyards Championship Rodeo</a></strong><span class="desc">Jun 26 · 7:30pm · AXS · 4 seats, lower bowl if available</span></div><span class="badge">Book today</span></div>
+      <div class="check-item"><div class="check-num">4</div><div><strong><a href="https://silodallas.com/events" target="_blank">BRESH @ SILO Dallas</a></strong><span class="desc">Jun 27 · 9:00pm · 18+</span></div><span class="badge">Book today</span></div>
+      <div class="check-item"><div class="check-num">5</div><div><strong><a href="https://www.bowiehousehotel.com/dining/bricks-and-horses/" target="_blank">Bricks & Horses</a></strong><span class="desc">Jun 26 · 5:30pm · OpenTable · party of 4</span></div><span class="badge normal">This week</span></div>
+      <div class="check-item"><div class="check-num">6</div><div><strong><a href="https://www.knifedallas.com/" target="_blank">Knife</a></strong><span class="desc">Jun 27 · 7:00pm · OpenTable · party of 4 (early seating!)</span></div><span class="badge normal">This week</span></div>
+      <div class="check-item"><div class="check-num">7</div><div><strong>The Trove drag brunch</strong><span class="desc">Jun 28 · Sunday Funday · Eventbrite · Bishop Arts</span></div><span class="badge normal">This week</span></div>
+      <div class="check-item"><div class="check-num">8</div><div><strong><a href="https://www.google.com/travel/flights/flights-from-los-angeles-to-dallas.html" target="_blank">Flights LAX ↔ DFW</a></strong><span class="desc">Set Google Flights price alerts · book when you see &lt;$220 RT</span></div><span class="badge normal">Watch</span></div>
+      <div class="check-item"><div class="check-num">9</div><div><strong>SUV rental at DFW</strong><span class="desc">Costco Travel or Autoslash · full-size SUV for 4 + bags</span></div><span class="badge normal">2 weeks out</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TIPS -->
+<section class="tips">
+  <div class="wrap">
+    <div class="section-eyebrow">Pro Tips</div>
+    <h2>Things <span class="accent">you'll thank me for.</span></h2>
+    <div class="tip-grid">
+      <div class="tip"><span class="tip-icon">👢</span><strong>Boots on Day 1</strong><p>If you don't own them, hit M.L. Leddy's or Maverick Western Wear Friday morning. You'll wear them constantly and they make every photo better.</p></div>
+      <div class="tip"><span class="tip-icon">💵</span><strong>Cash for Joe T's</strong><p>Joe T. Garcia's is cash only. Pull $200 before the trip and you're set for the whole weekend.</p></div>
+      <div class="tip"><span class="tip-icon">🥵</span><strong>It's 95°F by noon</strong><p>Plan outdoor stuff before 11am or after 6pm. Water like it's your job. Sunscreen at the rooftop pool.</p></div>
+      <div class="tip"><span class="tip-icon">👔</span><strong>Elevated Western works</strong><p>Hotel Drover, Bricks & Horses, The Joule, Knife — all OK with boots + button-down + jeans. No sneakers at the steakhouses.</p></div>
+      <div class="tip"><span class="tip-icon">🚕</span><strong>Uber Saturday night</strong><p>Park the SUV at The Joule and Uber to SILO + Cedar Springs. Don't drive. Don't even think about it.</p></div>
+      <div class="tip"><span class="tip-icon">🎟️</span><strong>BRESH sells out</strong><p>BRESH parties consistently sell out 1–2 weeks ahead. Buy the second you book your flights.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <h3>Sources & Links</h3>
+  <div class="sources">
+    <a href="https://www.axs.com/events/1161876/stockyards-championship-rodeo-6-26-tickets" target="_blank">Stockyards Rodeo · Jun 26</a>
+    <a href="https://silodallas.com/events" target="_blank">SILO Dallas events</a>
+    <a href="https://www.billybobstexas.com/events" target="_blank">Billy Bob's June events</a>
+    <a href="https://hoteldrover.com/" target="_blank">Hotel Drover</a>
+    <a href="https://www.thejouledallas.com/" target="_blank">The Joule</a>
+    <a href="https://www.bowiehousehotel.com/dining/bricks-and-horses/" target="_blank">Bricks & Horses</a>
+    <a href="https://roundupsaloon.com/" target="_blank">Round-Up Saloon</a>
+    <a href="https://www.whiteelephantsaloon.com/" target="_blank">White Elephant Saloon</a>
+    <a href="https://www.joetgarcias.com/" target="_blank">Joe T. Garcia's</a>
+    <a href="https://www.cowtowncoliseum.com/" target="_blank">Cowtown Coliseum</a>
+    <a href="https://www.fortworthstockyards.org/events/fort-worth-herd-twice-daily-cattle-drive" target="_blank">Fort Worth Herd</a>
+    <a href="https://www.nick-sams.com/reservations" target="_blank">Nick & Sam's</a>
+    <a href="https://www.google.com/travel/flights/flights-from-los-angeles-to-dallas.html" target="_blank">LAX → DFW flights</a>
+  </div>
+  <p class="signoff">Built for Jay & friends · Texas Weekend · Jun 25–28, 2026</p>
+</footer>
+
+</body>
+</html>
