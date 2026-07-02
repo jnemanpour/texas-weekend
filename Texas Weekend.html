@@ -622,6 +622,52 @@
   }
   .ev-note strong { color: #0f3d21; }
 
+  /* WEIRD TEXAS DETOURS */
+  .detours { background: linear-gradient(180deg, var(--cream) 0%, var(--paper) 100%); }
+  .detour-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+  }
+  .detour {
+    background: white;
+    border-radius: 16px;
+    padding: 26px 24px 24px;
+    box-shadow: var(--shadow);
+    border-top: 3px solid var(--tan);
+    position: relative;
+    display: flex; flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .detour:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+  .detour.rec { border-top-color: var(--burnt); border-top-width: 4px; }
+  .detour-badge {
+    position: absolute; top: -12px; left: 22px;
+    background: var(--burnt); color: white;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 4px 12px; border-radius: 100px;
+  }
+  .detour-icon { font-size: 40px; margin-bottom: 8px; }
+  .detour-dist {
+    font-family: 'Rye', serif;
+    font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--burnt); margin-bottom: 8px;
+  }
+  .detour h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px; font-weight: 700; color: var(--dark);
+    margin-bottom: 10px; line-height: 1.15;
+  }
+  .detour p { font-size: 14px; line-height: 1.55; margin: 0 0 16px; flex: 1; }
+  .detour-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--burnt); font-weight: 600; font-size: 14px;
+    border-bottom: 2px solid var(--tan);
+    align-self: flex-start; padding-bottom: 2px;
+  }
+  .detour-link:hover { color: var(--burnt-deep); }
+
   /* BUDGET */
   .budget { background: var(--paper); }
   .budget-table {
@@ -1252,6 +1298,50 @@
           <li><span class="time">2:30 PM</span><span class="activity"><strong>Budget return + shuttle to Terminal D</strong>Drop the Mach-E (booked 2:30 PM), hop the terminal shuttle. Basic Economy means no seat picked and you board last — move quick.</span></li>
           <li><span class="time">3:30 PM</span><span class="activity"><strong>Fly LAX · AA 2732</strong>Nonstop, lands LAX 4:39 PM. Sleep on the plane. You earned it.</span></li>
         </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEIRD TEXAS DETOURS -->
+<section class="detours">
+  <div class="wrap">
+    <div class="section-eyebrow">Got a Car? Get Weird</div>
+    <h2>Random, Texan &amp; <span class="accent">a little unhinged.</span></h2>
+    <p class="lead">You've got the Mach-E — so here's a shortlist of gloriously weird "only in Texas" stops within driving range. The best window is <strong>Friday afternoon</strong> (swap the pool/shopping block). Pick one; a giraffe at your car window is hard to beat.</p>
+
+    <div class="detour-grid">
+      <div class="detour rec">
+        <div class="detour-badge">Top pick</div>
+        <div class="detour-icon">🦒</div>
+        <div class="detour-dist">~1 hr 15 min SW · Glen Rose</div>
+        <h4>Fossil Rim Wildlife Center</h4>
+        <p>A legit <strong>African safari drive-thru</strong> in the Texas hill country. Giraffes, rhinos, zebras and ostriches walk right up to your windows — you do the whole thing from the car with the A/C blasting. Peak "we have a car" energy.</p>
+        <a class="detour-link" href="https://fossilrim.org/" target="_blank" rel="noopener">fossilrim.org →</a>
+      </div>
+
+      <div class="detour">
+        <div class="detour-icon">🦕</div>
+        <div class="detour-dist">~1 hr 20 min SW · Glen Rose</div>
+        <h4>Dinosaur Valley State Park</h4>
+        <p>Walk in <strong>real 113-million-year-old dinosaur footprints</strong> pressed into the Paluxy riverbed, then pose with the giant fiberglass dinos out front. 10 minutes from Fossil Rim — do both in one southwest run.</p>
+        <a class="detour-link" href="https://tpwd.texas.gov/state-parks/dinosaur-valley" target="_blank" rel="noopener">tpwd.texas.gov →</a>
+      </div>
+
+      <div class="detour">
+        <div class="detour-icon">🗼</div>
+        <div class="detour-dist">~1 hr 45 min NE · Paris, TX</div>
+        <h4>The Eiffel Tower (in a cowboy hat)</h4>
+        <p>Paris, Texas built a 65-ft Eiffel Tower and bolted a giant <strong>red cowboy hat</strong> on top, purely to one-up Paris, Tennessee. Absurd, iconic, a perfect photo. Needs its own half-day given the drive.</p>
+        <a class="detour-link" href="https://www.paristexas.gov/" target="_blank" rel="noopener">paristexas.gov →</a>
+      </div>
+
+      <div class="detour">
+        <div class="detour-icon">🌊</div>
+        <div class="detour-dist">~15 min · Downtown Fort Worth</div>
+        <h4>Fort Worth Water Gardens</h4>
+        <p>A surreal brutalist concrete water labyrinth downtown — the set from <em>Logan's Run</em>. Weird, free, and so close you can drop in Friday afternoon with zero schedule damage. The <strong>no-sacrifice</strong> weird option.</p>
+        <a class="detour-link" href="https://www.fortworth.com/listings/fort-worth-water-gardens/" target="_blank" rel="noopener">fortworth.com →</a>
       </div>
     </div>
   </div>
