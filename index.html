@@ -549,6 +549,8 @@
     transition: background 0.2s;
   }
   .hotel-cta:hover { background: var(--burnt-deep); }
+  .hotel-cta.map { background: white; color: var(--burnt) !important; border: 2px solid var(--tan); margin-left: 8px; }
+  .hotel-cta.map:hover { background: var(--cream); border-color: var(--burnt); }
 
   /* FLIGHTS & TRANSPORT */
   .transport { background: linear-gradient(180deg, var(--paper) 0%, #f3e7cf 100%); }
@@ -588,39 +590,6 @@
   .flight-detail li::before { content: '›'; position: absolute; left: 4px; top: 6px; color: var(--tan); font-weight: 700; }
   .flight-detail strong { color: var(--dark); }
 
-  .transport-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 18px;
-  }
-  .transport-opt {
-    background: white;
-    border-radius: 14px;
-    padding: 22px 22px 20px;
-    box-shadow: var(--shadow);
-    border-left: 3px solid var(--tan);
-    position: relative;
-  }
-  .transport-opt.best { border-left-color: var(--burnt); border-left-width: 4px; }
-  .opt-badge {
-    position: absolute; top: -11px; left: 20px;
-    background: var(--burnt); color: white;
-    font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-    padding: 4px 12px; border-radius: 100px;
-  }
-  .transport-opt h4 {
-    font-family: 'Playfair Display', serif;
-    font-size: 19px; font-weight: 700; color: var(--dark);
-    margin-bottom: 8px; margin-top: 4px;
-  }
-  .transport-opt p { font-size: 14px; line-height: 1.5; margin: 0 0 12px; }
-  .opt-cost {
-    background: var(--cream);
-    border-radius: 8px;
-    padding: 8px 12px;
-    font-size: 13px; font-weight: 600; color: var(--burnt);
-    display: inline-block;
-  }
   .car-card {
     background: white;
     border-radius: 18px;
@@ -658,6 +627,32 @@
     font-size: 14px; color: #14532d; line-height: 1.55;
   }
   .ev-note strong { color: #0f3d21; }
+  .map-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: white;
+    border: 2px solid var(--tan);
+    color: var(--burnt) !important;
+    font-weight: 600; font-size: 14px;
+    padding: 10px 18px; border-radius: 100px;
+    box-shadow: var(--shadow);
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .map-btn:hover { background: var(--cream); border-color: var(--burnt); }
+
+  /* MAPS SECTION */
+  .maps { background: var(--cream); }
+  .map-list { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 4px; }
+  .map-pin {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: white;
+    border: 1px solid var(--tan-soft);
+    color: var(--dark) !important;
+    font-size: 14px; font-weight: 500;
+    padding: 9px 15px; border-radius: 100px;
+    box-shadow: 0 2px 8px rgba(31,26,23,0.05);
+    transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+  }
+  .map-pin:hover { border-color: var(--burnt); color: var(--burnt) !important; transform: translateY(-2px); box-shadow: var(--shadow); }
 
   /* WEIRD TEXAS DETOURS + SHOPPING */
   .detours { background: linear-gradient(180deg, var(--cream) 0%, var(--paper) 100%); }
@@ -844,6 +839,7 @@
       <a href="#shopping">Shopping</a>
       <a href="#budget">Budget</a>
       <a href="#checklist">Checklist</a>
+      <a href="#maps">Maps</a>
     </div>
   </div>
 </nav>
@@ -968,7 +964,7 @@
   <div class="wrap">
     <div class="section-eyebrow">Flights & Getting Around</div>
     <h2>Wheels up, <span class="accent">wheels down.</span></h2>
-    <p class="lead">Both American Airlines flights are booked (Basic Economy — no seat selection, one personal item, board last). Below: your exact flight details, plus how to get from DFW to the Stockyards on arrival and from Dallas back to DFW for the flight home.</p>
+    <p class="lead">Both American Airlines flights are booked (Basic Economy — no seat selection, one personal item, board last). You've got the Mach-E for the whole trip, so getting around is just three drives — each with a Google Maps link below.</p>
 
     <div class="flight-grid">
       <div class="flight-card">
@@ -1023,52 +1019,17 @@
       </div>
     </div>
 
-    <h3 style="margin-top:48px; margin-bottom:6px; color:var(--burnt);">🛬 Airport → Hotel · DFW to Hotel Drover (Thu, land 1:16 PM)</h3>
-    <p style="font-size:15px; margin-bottom:20px;">Hotel Drover is at 200 Mule Alley Dr in the Fort Worth Stockyards — about <strong>28 miles / 35–40 min</strong> northwest of DFW.</p>
-    <div class="transport-grid">
-      <div class="transport-opt best">
-        <div class="opt-badge">Your plan</div>
-        <h4>⚡ Your Budget Mach-E</h4>
-        <p>Pick up at the DFW Budget counter / rental center (Terminal A shuttle) at 1:30 PM. ~35 min via TX-183 → TX-121 → I-35W N. <strong>This is the backbone of the whole trip</strong> — Fort Worth, the Saturday drive to Dallas, and Sunday's run back to the airport. Just remember it's an EV: plan a charge before you return it.</p>
-        <div class="opt-cost">✅ Booked · #728543547</div>
-      </div>
-      <div class="transport-opt">
-        <h4>🚕 Uber / Lyft</h4>
-        <p>Straight from Terminal D curbside to the Drover's front door. Easiest with luggage, no rental counter. Surge is mild on a Thursday early afternoon.</p>
-        <div class="opt-cost">~$45–65 one way · ~40 min</div>
-      </div>
-      <div class="transport-opt">
-        <h4>🚆 TEXRail train</h4>
-        <p>Trinity Metro's TEXRail runs from <strong>DFW Terminal B</strong> to the <strong>North Side Station</strong> (closest stop to the Stockyards), then a 5-min rideshare to the hotel. Cheapest option, but slowest with a transfer.</p>
-        <div class="opt-cost">~$2.50 + short Uber · ~60 min</div>
-      </div>
-      <div class="transport-opt">
-        <h4>🏨 Hotel / black car</h4>
-        <p>Hotel Drover can arrange a private car or you can pre-book a black car (Blacklane, Execucar). Zero hassle, meet-and-greet at baggage claim D16 — the splurge move after a 6am wakeup.</p>
-        <div class="opt-cost">~$90–130 one way</div>
-      </div>
-    </div>
+    <h3 style="margin-top:48px; margin-bottom:6px; color:var(--burnt);">🛬 Drive 1 · DFW → Hotel Drover (Thu, after you land)</h3>
+    <p style="font-size:15px; margin-bottom:16px;">Pick up the Mach-E at the DFW rental center (Terminal A shuttle) at 1:30 PM, then head to 200 Mule Alley Dr in the Fort Worth Stockyards — about <strong>28 miles / 35–40 min</strong> via TX-183 → TX-121 → I-35W N.</p>
+    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=Dallas+Fort+Worth+International+Airport&destination=Hotel+Drover+200+Mule+Alley+Dr+Fort+Worth+TX+76164&travelmode=driving" target="_blank" rel="noopener">📍 Directions: DFW → Hotel Drover</a>
 
-    <h3 style="margin-top:44px; margin-bottom:6px; color:var(--burnt);">🛫 Hotel → Airport · HALL Arts to DFW (Sun, flight 3:30 PM)</h3>
-    <p style="font-size:15px; margin-bottom:20px;">HALL Arts is in the Dallas Arts District — about <strong>20 miles / 25–30 min</strong> to DFW. <strong>Leave downtown by ~1:15 PM</strong> to clear bag drop + Basic-Economy security with a cushion.</p>
-    <div class="transport-grid">
-      <div class="transport-opt best">
-        <div class="opt-badge">Your plan</div>
-        <h4>⚡ Drive the Mach-E back</h4>
-        <p>Drop-off is booked for 2:30 PM at DFW — but your flight is 3:30, so that's tight. <strong>Aim to reach the Budget return by ~2:00 PM.</strong> ~25 min from Bishop Arts via TX-183 W, then the terminal shuttle to Terminal D. Recharge on the way (or pre-pay) so you're not hit with the EV refuel fee.</p>
-        <div class="opt-cost">✅ Booked · return by 2:00 to be safe</div>
-      </div>
-      <div class="transport-opt">
-        <h4>🚕 Uber / Lyft</h4>
-        <p>Simplest if you already dropped the car Saturday night. From HALL Arts to DFW Terminal D departures in ~25 min. Order by 1:15 PM.</p>
-        <div class="opt-cost">~$35–55 one way</div>
-      </div>
-      <div class="transport-opt">
-        <h4>🚊 DART Orange Line</h4>
-        <p>DART light rail runs from downtown Dallas straight to <strong>DFW Terminal A</strong>. Board near the Arts District. Car-free and cheap, but ~50 min + walk — only if you're traveling light.</p>
-        <div class="opt-cost">~$2.50 · ~50 min</div>
-      </div>
-    </div>
+    <h3 style="margin-top:40px; margin-bottom:6px; color:var(--burnt);">🚗 Drive 2 · Fort Worth → Dallas (Sat, after the rodeo)</h3>
+    <p style="font-size:15px; margin-bottom:16px;">From the Stockyards to HALL Arts in the Dallas Arts District — about <strong>35 miles / 45 min</strong> east on I-30.</p>
+    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=Hotel+Drover+Fort+Worth+TX&destination=HALL+Arts+Hotel+1717+Leonard+St+Dallas+TX+75201&travelmode=driving" target="_blank" rel="noopener">📍 Directions: Stockyards → HALL Arts</a>
+
+    <h3 style="margin-top:40px; margin-bottom:6px; color:var(--burnt);">🛫 Drive 3 · HALL Arts → DFW (Sun, for the 3:30 flight)</h3>
+    <p style="font-size:15px; margin-bottom:16px;">Back to DFW — about <strong>20 miles / 25–30 min</strong>. Drop-off is booked for 2:30 PM, but <strong>aim to reach the Budget return by ~1:00 PM</strong> so you're not rushing a Basic-Economy boarding. Recharge on the way (or pre-pay) to dodge the EV refuel fee.</p>
+    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=HALL+Arts+Hotel+Dallas+TX&destination=Dallas+Fort+Worth+International+Airport+Rental+Car+Center&travelmode=driving" target="_blank" rel="noopener">📍 Directions: HALL Arts → DFW</a>
   </div>
 </section>
 
@@ -1496,6 +1457,7 @@
             📍 200 Mule Alley Drive, Fort Worth Stockyards · Conf# 6650258634 · ☎ +1 817-755-5557
           </div>
           <a class="hotel-cta" href="https://hoteldrover.com/" target="_blank">hoteldrover.com →</a>
+          <a class="hotel-cta map" href="https://www.google.com/maps/search/?api=1&query=Hotel+Drover+200+Mule+Alley+Dr+Fort+Worth+TX+76164" target="_blank" rel="noopener">📍 Map</a>
         </div>
       </div>
       <div class="hotel">
@@ -1509,6 +1471,7 @@
             🛏️ Deluxe Queen · 2 queen beds · city view · free cancellation · booked via Booking.com
           </div>
           <a class="hotel-cta" href="https://www.hallartshotel.com/" target="_blank">hallartshotel.com →</a>
+          <a class="hotel-cta map" href="https://www.google.com/maps/search/?api=1&query=HALL+Arts+Hotel+1717+Leonard+St+Dallas+TX+75201" target="_blank" rel="noopener">📍 Map</a>
         </div>
       </div>
     </div>
@@ -1609,6 +1572,59 @@
       <div class="check-item"><div class="check-num">2</div><div><strong><a href="https://www.bowiehousehotel.com/dining/bricks-and-horses/" target="_blank">Bricks & Horses</a></strong><span class="desc">Fri Jul 3 · 5:30pm · OpenTable · party of 4</span></div><span class="badge normal">This week</span></div>
       <div class="check-item"><div class="check-num">3</div><div><strong><a href="https://www.knifedallas.com/" target="_blank">Knife</a></strong><span class="desc">Sat Jul 4 · 6:30pm · OpenTable · party of 4 (early seating!)</span></div><span class="badge normal">This week</span></div>
       <div class="check-item"><div class="check-num">4</div><div><strong>Rose Room @ S4 (drag)</strong><span class="desc">Sat Jul 4 late · cover at the door · your drag moment (Sunday brunch won't fit the flight)</span></div><span class="badge normal">Just show up</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- MAPS -->
+<section class="maps" id="maps">
+  <div class="wrap">
+    <div class="section-eyebrow">Every Stop on the Map</div>
+    <h2>Tap to <span class="accent">navigate.</span></h2>
+    <p class="lead">Google Maps links for everywhere you're going — hotels, venues, food and the detours. Tap any pin to open directions in your phone.</p>
+
+    <h3 style="margin-top:36px; margin-bottom:6px; color:var(--burnt);">✈️ Airport &amp; hotels</h3>
+    <div class="map-list">
+      <a class="map-pin" href="https://www.google.com/maps/search/?api=1&query=Dallas+Fort+Worth+International+Airport" target="_blank" rel="noopener">✈️ DFW Airport</a>
+      <a class="map-pin" href="https://www.google.com/maps/search/?api=1&query=Hotel+Drover+200+Mule+Alley+Dr+Fort+Worth+TX+76164" target="_blank" rel="noopener">🏨 Hotel Drover</a>
+      <a class="map-pin" href="https://www.google.com/maps/search/?api=1&query=HALL+Arts+Hotel+1717+Leonard+St+Dallas+TX+75201" target="_blank" rel="noopener">🏨 HALL Arts Hotel</a>
+    </div>
+
+    <h3 style="margin-top:28px; margin-bottom:6px; color:var(--burnt);">🤠 Fort Worth · Stockyards &amp; downtown</h3>
+    <div class="map-list">
+      <a class="map-pin" href="https://www.google.com/maps/search/?api=1&query=Cowtown+Coliseum+Fort+Worth+TX" target="_blank" rel="noopener">🤠 Cowtown Coliseum (rodeo)</a>
+      <a class="map-pin" href="https://www.google.com/maps/search/?api=1&query=Fort+Worth+Stockyards+Exchange+Ave" target="_blank" rel="noopener">🐂 Stockyards / cattle drive</a>
+      <a class="map-pin" href="https://www.google.com/maps/search/?api=1&query=Billy+Bob's+Texas+Fort+Worth" target="_blank" rel="noopener">🎸 Billy Bob's Texas</a>
+      <a class="map-pin" href="https://www.google.com/maps/search/?api=1&query=White+Elephant+Saloon+Fort+Worth" target="_blank" rel="noopener">🥃 White Elephant Saloon</a>
+      <a class="map-pin" href="https://www.google.com/maps/search/?api=1&query=Joe+T+Garcia's+Fort+Worth" target="_blank" rel="noopener">🌮 Joe T. Garcia's</a>
+      <a class="map-pin" href="https://www.google.com/maps/search/?api=1&query=Heim+Barbecue+Fort+Worth" target="_blank" rel="noopener">🍖 Heim BBQ</a>
+      <a class="map-pin" href="https://www.google.com/maps/search/?api=1&query=Bowie+House+Bricks+and+Horses+Fort+Worth" target="_blank" rel="noopener">🥩 Bricks &amp; Horses</a>
+      <a class="map-pin" href="https://www.google.com/maps/search/?api=1&query=Mule+Alley+Fort+Worth+Stockyards" target="_blank" rel="noopener">🐎 Mule Alley</a>
+      <a class="map-pin" href="https://www.google.com/maps/search/?api=1&query=M.L.+Leddy's+Fort+Worth+Stockyards" target="_blank" rel="noopener">👢 M.L. Leddy's</a>
+      <a class="map-pin" href="https://www.google.com/maps/search/?api=1&query=Maverick+Fine+Western+Wear+Fort+Worth" target="_blank" rel="noopener">🤠 Maverick Western Wear</a>
+      <a class="map-pin" href="https://www.google.com/maps/search/?api=1&query=Sundance+Square+Fort+Worth" target="_blank" rel="noopener">🏙️ Sundance Square</a>
+    </div>
+
+    <h3 style="margin-top:28px; margin-bottom:6px; color:var(--burnt);">🌆 Dallas</h3>
+    <div class="map-list">
+      <a class="map-pin" href="https://www.google.com/maps/search/?api=1&query=SILO+Dallas+nightclub" target="_blank" rel="noopener">🎧 SILO (Vintage Culture)</a>
+      <a class="map-pin" href="https://www.google.com/maps/search/?api=1&query=Knife+Steakhouse+Dallas+Mockingbird" target="_blank" rel="noopener">🥩 Knife</a>
+      <a class="map-pin" href="https://www.google.com/maps/search/?api=1&query=Ellen's+Dallas" target="_blank" rel="noopener">🍳 Ellen's (Sun breakfast)</a>
+      <a class="map-pin" href="https://www.google.com/maps/search/?api=1&query=Station+4+S4+Cedar+Springs+Dallas" target="_blank" rel="noopener">👑 S4 / Rose Room</a>
+      <a class="map-pin" href="https://www.google.com/maps/search/?api=1&query=Round-Up+Saloon+Cedar+Springs+Dallas" target="_blank" rel="noopener">🕺 Round-Up Saloon</a>
+      <a class="map-pin" href="https://www.google.com/maps/search/?api=1&query=Klyde+Warren+Park+Dallas" target="_blank" rel="noopener">🌳 Klyde Warren Park</a>
+      <a class="map-pin" href="https://www.google.com/maps/search/?api=1&query=Highland+Park+Village+Dallas" target="_blank" rel="noopener">💎 Highland Park Village</a>
+      <a class="map-pin" href="https://www.google.com/maps/search/?api=1&query=NorthPark+Center+Dallas" target="_blank" rel="noopener">🛍️ NorthPark Center</a>
+      <a class="map-pin" href="https://www.google.com/maps/search/?api=1&query=Bishop+Arts+District+Dallas" target="_blank" rel="noopener">🎨 Bishop Arts District</a>
+      <a class="map-pin" href="https://www.google.com/maps/search/?api=1&query=West+Village+Uptown+Dallas" target="_blank" rel="noopener">🕶️ West Village</a>
+    </div>
+
+    <h3 style="margin-top:28px; margin-bottom:6px; color:var(--burnt);">🦒 Weird Texas detours</h3>
+    <div class="map-list">
+      <a class="map-pin" href="https://www.google.com/maps/search/?api=1&query=Fossil+Rim+Wildlife+Center+Glen+Rose+TX" target="_blank" rel="noopener">🦒 Fossil Rim</a>
+      <a class="map-pin" href="https://www.google.com/maps/search/?api=1&query=Dinosaur+Valley+State+Park+Glen+Rose+TX" target="_blank" rel="noopener">🦕 Dinosaur Valley</a>
+      <a class="map-pin" href="https://www.google.com/maps/search/?api=1&query=Eiffel+Tower+Paris+TX" target="_blank" rel="noopener">🗼 Paris, TX Eiffel Tower</a>
+      <a class="map-pin" href="https://www.google.com/maps/search/?api=1&query=Fort+Worth+Water+Gardens" target="_blank" rel="noopener">🌊 FW Water Gardens</a>
     </div>
   </div>
 </section>
