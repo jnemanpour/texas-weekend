@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Texas 4th of July — Stockyards + Dallas</title>
 <meta property="og:title" content="Texas 4th of July — Stockyards + Dallas (Jul 2–5, 2026)">
-<meta property="og:description" content="A 4th of July weekend in Texas. Rodeo, fireworks, Vintage Culture, drag brunch.">
+<meta property="og:description" content="A 4th of July weekend in Texas. Rodeo, fireworks, Vintage Culture, Rose Room drag.">
 <meta property="og:image" content="https://www.fortworthstockyards.org/sites/default/files/2022-04/FW%20Herd%20drive%20under%20sign%2013x19%20print%20no%20logo-_0.jpeg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -128,9 +128,46 @@
   }
   .warning-bar strong { font-weight: 700; }
 
+  /* JUMP NAV */
+  .jump-nav {
+    position: sticky; top: 0; z-index: 200;
+    background: rgba(31,26,23,0.97);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(201,166,107,0.28);
+  }
+  .jump-inner {
+    max-width: 1080px; margin: 0 auto;
+    padding: 0 12px;
+    display: flex; align-items: center; gap: 14px;
+    min-height: 52px;
+  }
+  .jump-brand {
+    font-family: 'Rye', serif;
+    color: var(--tan) !important;
+    font-size: 14px; white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .jump-brand:hover { color: var(--cream) !important; }
+  .jump-links {
+    display: flex; gap: 2px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .jump-links::-webkit-scrollbar { display: none; }
+  .jump-links a {
+    color: var(--cream) !important;
+    font-size: 13px; font-weight: 600;
+    padding: 8px 13px; border-radius: 100px;
+    white-space: nowrap;
+    transition: background 0.15s;
+  }
+  .jump-links a:hover { background: rgba(201,166,107,0.22); color: white !important; }
+  @media (max-width: 640px) { .jump-brand { display: none; } }
+
   /* LAYOUT */
   .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
-  section { padding: 80px 0; }
+  section { padding: 80px 0; scroll-margin-top: 60px; }
   .section-eyebrow {
     font-family: 'Rye', serif;
     font-size: 12px;
@@ -794,14 +831,31 @@
   🤠 <strong>Flights &amp; hotels are BOOKED.</strong> American Airlines LAX↔DFW · Hotel Drover · HALL Arts Hotel. This is the locked-in plan — Jul 2–5, 2026.
 </div>
 
+<!-- JUMP NAV -->
+<nav class="jump-nav">
+  <div class="jump-inner">
+    <a href="#top" class="jump-brand">🤠 Texas 4th</a>
+    <div class="jump-links">
+      <a href="#itinerary">Itinerary</a>
+      <a href="#travel">Travel</a>
+      <a href="#hotels">Hotels</a>
+      <a href="#spots">Spots</a>
+      <a href="#detours">Detours</a>
+      <a href="#shopping">Shopping</a>
+      <a href="#budget">Budget</a>
+      <a href="#checklist">Checklist</a>
+    </div>
+  </div>
+</nav>
+
 <!-- HERO -->
-<section class="hero">
+<section class="hero" id="top">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
   <div class="hero-inner">
     <div class="hero-eyebrow">4th of July in Texas</div>
     <h1>Boots, <span class="red">fireworks</span><br>& Vintage <span class="accent">Culture</span></h1>
-    <p class="hero-tagline">Fort Worth Stockyards. Stockyards rodeo. Top-5-in-America fireworks. The biggest house DJ on the planet at SILO. Drag brunch to land it.</p>
+    <p class="hero-tagline">Fort Worth Stockyards. Stockyards rodeo. Top-5-in-America fireworks. The biggest house DJ on the planet at SILO. The Rose Room to cap it.</p>
     <div class="hero-meta">
       <div class="hero-chip"><strong>Thu Jul 2</strong> — Sun Jul 5, 2026</div>
       <div class="hero-chip"><strong>American Airlines</strong> · LAX ↔ DFW · booked</div>
@@ -845,8 +899,8 @@
       </div>
       <div class="pitch-card">
         <span class="icon">👑</span>
-        <h4>Drag brunch</h4>
-        <p>Sunday at The Trove in Bishop Arts. A soft, sequined landing.</p>
+        <h4>Rose Room drag</h4>
+        <p>The world-famous drag theater at S4, Saturday night on Cedar Springs. Sequined and iconic.</p>
       </div>
     </div>
   </div>
@@ -910,7 +964,7 @@
 </section>
 
 <!-- FLIGHTS & GROUND TRANSPORT -->
-<section class="transport">
+<section class="transport" id="travel">
   <div class="wrap">
     <div class="section-eyebrow">Flights & Getting Around</div>
     <h2>Wheels up, <span class="accent">wheels down.</span></h2>
@@ -1019,7 +1073,7 @@
 </section>
 
 <!-- VENUES PHOTO GRID -->
-<section class="venues">
+<section class="venues" id="spots">
   <div class="wrap">
     <div class="section-eyebrow">The Spots</div>
     <h2>Where you'll <span class="accent">actually be.</span></h2>
@@ -1152,7 +1206,7 @@
 </section>
 
 <!-- DAYS -->
-<section class="days">
+<section class="days" id="itinerary">
   <div class="wrap">
     <div class="section-eyebrow">Day by Day</div>
     <h2>The <span class="accent">itinerary</span></h2>
@@ -1253,8 +1307,8 @@
             </div>
             <div class="party-stop">
               <div class="stop-time">1:30 AM</div>
-              <h4>S4 / Rose Room</h4>
-              <p>World-famous drag theater. <a href="https://www.station4dallas.com/" target="_blank">station4dallas.com</a></p>
+              <h4>👑 S4 / Rose Room</h4>
+              <p><strong>This is your drag moment</strong> — the world-famous Rose Room, since Sunday brunch won't fit. <a href="https://www.station4dallas.com/" target="_blank">station4dallas.com</a></p>
             </div>
             <div class="party-stop">
               <div class="stop-time">2:30 AM</div>
@@ -1284,19 +1338,20 @@
     <!-- SUNDAY -->
     <div class="day-card">
       <div class="day-banner" style="background-image: url('https://images.squarespace-cdn.com/content/v1/6387d4f5186c68589699c113/ef994de7-5944-484c-8f20-e3c0ebcc81a0/Girls+Night+Out-182.jpg');">
-        <div class="day-banner-label">Day Four · Brunch & Home</div>
+        <div class="day-banner-label">Day Four · Breakfast & Home</div>
       </div>
       <div class="day-body">
         <div class="day-header">
           <h3>Sunday, July 5</h3>
-          <div class="day-date">Early drag brunch · fly home 3:30 PM</div>
+          <div class="day-date">Easy breakfast · fly home 3:30 PM</div>
         </div>
+        <p style="background:var(--cream); border-radius:10px; padding:12px 16px; font-size:14px; color:var(--gray); margin-bottom:20px;">👑 <strong>Heads up:</strong> Dallas drag brunches don't start till ~1:30–3 PM, which won't clear your 3:30 flight — so you got your drag fix <strong>Saturday night at the Rose Room</strong> instead. Sunday is a relaxed real breakfast, then wheels up.</p>
         <ul class="schedule">
-          <li><span class="time">9:30 AM</span><span class="activity"><strong>Check out of HALL Arts + load the car</strong>Bags packed, coffee in hand. Today runs on a clock — the flight home is 3:30 PM, so no lingering.</span></li>
-          <li><span class="time">10:00 AM</span><span class="activity"><strong>Drag brunch at The Trove (Bishop Arts)</strong>Sunday Funday drag brunch — book the <strong>first seating</strong>. Bishop Arts is the indie/cute neighborhood, ~10 min from downtown. À la carte menu, $15+ tickets. Eat, tip the queens, keep an eye on the clock.<span class="meta">⏰ Reserve earliest seating — you have a plane to catch</span></span></li>
-          <li><span class="time">12:15 PM</span><span class="activity"><strong>Quick Bishop Arts stroll (optional)</strong>15 min of air-conditioned indie shops if you're ahead of schedule. Skip it if brunch ran long.</span></li>
-          <li><span class="time">1:15 PM</span><span class="activity"><strong>Drive to DFW + charge the Mach-E ⚡</strong>~25 min from Bishop Arts. Top up the battery on the way (or pre-pay Budget's recharge fee) so you don't get dinged. Return the car by ~2:00 PM — the drop-off is booked for 2:30 but that's tight before a 3:30 flight.</span></li>
-          <li><span class="time">2:30 PM</span><span class="activity"><strong>Budget return + shuttle to Terminal D</strong>Drop the Mach-E (booked 2:30 PM), hop the terminal shuttle. Basic Economy means no seat picked and you board last — move quick.</span></li>
+          <li><span class="time">9:00 AM</span><span class="activity"><strong>Check out of HALL Arts + load the car</strong>Bags packed, coffee in hand. No rush now — you've got a calm morning before the airport.</span></li>
+          <li><span class="time">9:30 AM</span><span class="activity"><strong>Breakfast at <a href="https://ellensdallas.com/" target="_blank">Ellen's</a></strong>Southern-comfort brunch downtown, ~5 min from HALL Arts. Opens early, big portions, easy in-and-out. Chicken &amp; waffles, migas, bottomless mimosas if you dare.<span class="meta">~$25 / person · walk-in friendly</span></span></li>
+          <li><span class="time">11:00 AM</span><span class="activity"><strong>Optional: Klyde Warren Park or a quick Bishop Arts swing</strong>Stretch your legs at the park over the freeway, or drive ~10 min to Bishop Arts for indie shops if you want one last neighborhood.</span></li>
+          <li><span class="time">12:15 PM</span><span class="activity"><strong>Drive to DFW + charge the Mach-E ⚡</strong>~25 min. Top up the battery on the way (or pre-pay Budget's recharge fee) so you don't get dinged. Leaving now gives you a real cushion.</span></li>
+          <li><span class="time">1:00 PM</span><span class="activity"><strong>Return the car + shuttle to Terminal D</strong>Drop the Mach-E well ahead of the 2:30 PM booking, hop the terminal shuttle. Basic Economy means no seat picked and you board last — so bank the extra time.</span></li>
           <li><span class="time">3:30 PM</span><span class="activity"><strong>Fly LAX · AA 2732</strong>Nonstop, lands LAX 4:39 PM. Sleep on the plane. You earned it.</span></li>
         </ul>
       </div>
@@ -1305,7 +1360,7 @@
 </section>
 
 <!-- WEIRD TEXAS DETOURS -->
-<section class="detours">
+<section class="detours" id="detours">
   <div class="wrap">
     <div class="section-eyebrow">Got a Car? Get Weird</div>
     <h2>Random, Texan &amp; <span class="accent">a little unhinged.</span></h2>
@@ -1349,7 +1404,7 @@
 </section>
 
 <!-- SHOPPING -->
-<section class="shopping">
+<section class="shopping" id="shopping">
   <div class="wrap">
     <div class="section-eyebrow">Retail Therapy</div>
     <h2>Where to <span class="accent">shop nearby.</span></h2>
@@ -1407,7 +1462,7 @@
         <div class="detour-icon">🎨</div>
         <div class="detour-dist">~10 min · Oak Cliff</div>
         <h4>Bishop Arts District</h4>
-        <p>Indie boutiques, vintage, records and gift shops in Dallas's cutest neighborhood. You're already here Sunday for drag brunch — build in browsing time.</p>
+        <p>Indie boutiques, vintage, records and gift shops in Dallas's cutest neighborhood. An easy optional stop Sunday morning before you fly out.</p>
         <a class="detour-link" href="https://bishopartsdistrict.com/" target="_blank" rel="noopener">bishopartsdistrict.com →</a>
       </div>
       <div class="detour">
@@ -1422,7 +1477,7 @@
 </section>
 
 <!-- HOTELS -->
-<section class="hotels">
+<section class="hotels" id="hotels">
   <div class="wrap">
     <div class="section-eyebrow">Where You're Sleeping</div>
     <h2>Both hotels <span class="accent">are booked.</span></h2>
@@ -1461,7 +1516,7 @@
 </section>
 
 <!-- BUDGET -->
-<section class="budget">
+<section class="budget" id="budget">
   <div class="wrap">
     <div class="section-eyebrow">The Math · Per Person, All In</div>
     <h2>What it <span class="accent">runs you.</span></h2>
@@ -1539,7 +1594,7 @@
 </section>
 
 <!-- CHECKLIST -->
-<section class="checklist">
+<section class="checklist" id="checklist">
   <div class="wrap">
     <div class="section-eyebrow">Book-Now Checklist</div>
     <h2>Flights + hotels done. <span class="accent">Now the fun stuff.</span></h2>
@@ -1553,7 +1608,7 @@
       <div class="check-item"><div class="check-num">1</div><div><strong><a href="https://silodallas.com/events" target="_blank">Vintage Culture @ SILO</a></strong><span class="desc">Sat Jul 4 · 9:00pm · 18+ · will sell out</span></div><span class="badge">Book today</span></div>
       <div class="check-item"><div class="check-num">2</div><div><strong><a href="https://www.bowiehousehotel.com/dining/bricks-and-horses/" target="_blank">Bricks & Horses</a></strong><span class="desc">Fri Jul 3 · 5:30pm · OpenTable · party of 4</span></div><span class="badge normal">This week</span></div>
       <div class="check-item"><div class="check-num">3</div><div><strong><a href="https://www.knifedallas.com/" target="_blank">Knife</a></strong><span class="desc">Sat Jul 4 · 6:30pm · OpenTable · party of 4 (early seating!)</span></div><span class="badge normal">This week</span></div>
-      <div class="check-item"><div class="check-num">4</div><div><strong>The Trove drag brunch</strong><span class="desc">Sun Jul 5 · FIRST seating · Eventbrite · Bishop Arts · you fly at 3:30pm</span></div><span class="badge normal">This week</span></div>
+      <div class="check-item"><div class="check-num">4</div><div><strong>Rose Room @ S4 (drag)</strong><span class="desc">Sat Jul 4 late · cover at the door · your drag moment (Sunday brunch won't fit the flight)</span></div><span class="badge normal">Just show up</span></div>
     </div>
   </div>
 </section>
