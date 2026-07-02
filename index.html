@@ -584,6 +584,43 @@
     font-size: 13px; font-weight: 600; color: var(--burnt);
     display: inline-block;
   }
+  .car-card {
+    background: white;
+    border-radius: 18px;
+    padding: 26px 28px;
+    box-shadow: var(--shadow);
+    border-top: 4px solid #1a7f43;
+  }
+  .car-head { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; align-items: flex-start; }
+  .ev-badge {
+    display: inline-block;
+    background: #e3f5e9; color: #1a7f43;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.04em;
+    padding: 4px 12px; border-radius: 100px; margin-bottom: 10px;
+  }
+  .car-head h4 { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--dark); margin-bottom: 4px; line-height: 1.1; }
+  .car-vendor { font-size: 14px; color: var(--gray); font-weight: 600; }
+  .car-specs { display: flex; flex-wrap: wrap; gap: 8px; max-width: 320px; }
+  .car-specs span {
+    background: var(--cream); border-radius: 8px;
+    padding: 6px 10px; font-size: 12px; color: var(--gray); font-weight: 500;
+  }
+  .car-legs {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    margin: 22px 0 18px; padding-top: 20px;
+    border-top: 1px solid var(--tan-soft);
+  }
+  @media (max-width: 560px) { .car-legs { grid-template-columns: 1fr; } }
+  .car-leg strong { display: block; font-size: 19px; color: var(--dark); margin: 2px 0 4px; }
+  .car-leg-label { font-family: 'Rye', serif; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #1a7f43; }
+  .car-leg-loc { font-size: 13px; color: var(--gray); line-height: 1.4; }
+  .ev-note {
+    background: #e3f5e9;
+    border-radius: 12px;
+    padding: 16px 18px;
+    font-size: 14px; color: #14532d; line-height: 1.55;
+  }
+  .ev-note strong { color: #0f3d21; }
 
   /* BUDGET */
   .budget { background: var(--paper); }
@@ -855,14 +892,44 @@
       </div>
     </div>
 
+    <h3 style="margin-top:48px; margin-bottom:6px; color:var(--burnt);">🚗 Your ride · booked</h3>
+    <div class="car-card">
+      <div class="car-head">
+        <div>
+          <div class="ev-badge">⚡ Fully electric</div>
+          <h4>Ford Mustang Mach-E AWD <span style="font-weight:400; color:var(--gray-soft); font-size:16px;">or similar</span></h4>
+          <div class="car-vendor">Budget · Booking #728543547 · unlimited mileage</div>
+        </div>
+        <div class="car-specs">
+          <span>❄️ A/C</span><span>👤 5 seats</span><span>⚙️ Automatic</span>
+          <span>🧳 2 large + 1 small bag</span><span>🚪 4 doors</span>
+        </div>
+      </div>
+      <div class="car-legs">
+        <div class="car-leg">
+          <div class="car-leg-label">Pick-up</div>
+          <strong>Thu, Jul 2 · 1:30 PM</strong>
+          <div class="car-leg-loc">DFW International Airport · lands 1:16 PM, so you're right on time</div>
+        </div>
+        <div class="car-leg">
+          <div class="car-leg-label">Drop-off</div>
+          <strong>Sun, Jul 5 · 2:30 PM</strong>
+          <div class="car-leg-loc">DFW International Airport · ⚠️ only ~1 hr before your 3:30 flight — aim to arrive by 2:00</div>
+        </div>
+      </div>
+      <div class="ev-note">
+        ⚡ <strong>It's electric — plan one charge.</strong> The Mach-E AWD does ~250 mi on a full battery; your whole weekend (airport → Stockyards → Dallas → airport) runs ~150–200 mi, so one good top-up covers it. Charge overnight at the hotel if they have a station, or hit an Electrify America / ChargePoint DC fast charger. <strong>Return it charged</strong> (or pre-pay Budget's EV recharge fee) to avoid a surprise charge on drop-off.
+      </div>
+    </div>
+
     <h3 style="margin-top:48px; margin-bottom:6px; color:var(--burnt);">🛬 Airport → Hotel · DFW to Hotel Drover (Thu, land 1:16 PM)</h3>
     <p style="font-size:15px; margin-bottom:20px;">Hotel Drover is at 200 Mule Alley Dr in the Fort Worth Stockyards — about <strong>28 miles / 35–40 min</strong> northwest of DFW.</p>
     <div class="transport-grid">
       <div class="transport-opt best">
-        <div class="opt-badge">Recommended</div>
-        <h4>🚙 Rental SUV from DFW</h4>
-        <p>Pick up at the DFW rental center (Terminal A shuttle). ~35 min via TX-183 → TX-121 → I-35W N. <strong>This is the backbone of the whole trip</strong> — you need a car for Fort Worth, the Saturday drive to Dallas, and Sunday's run back to the airport. Costco Travel / Autoslash for a full-size SUV.</p>
-        <div class="opt-cost">~$90–110/day · book 2 weeks out</div>
+        <div class="opt-badge">Your plan</div>
+        <h4>⚡ Your Budget Mach-E</h4>
+        <p>Pick up at the DFW Budget counter / rental center (Terminal A shuttle) at 1:30 PM. ~35 min via TX-183 → TX-121 → I-35W N. <strong>This is the backbone of the whole trip</strong> — Fort Worth, the Saturday drive to Dallas, and Sunday's run back to the airport. Just remember it's an EV: plan a charge before you return it.</p>
+        <div class="opt-cost">✅ Booked · #728543547</div>
       </div>
       <div class="transport-opt">
         <h4>🚕 Uber / Lyft</h4>
@@ -885,10 +952,10 @@
     <p style="font-size:15px; margin-bottom:20px;">HALL Arts is in the Dallas Arts District — about <strong>20 miles / 25–30 min</strong> to DFW. <strong>Leave downtown by ~1:15 PM</strong> to clear bag drop + Basic-Economy security with a cushion.</p>
     <div class="transport-grid">
       <div class="transport-opt best">
-        <div class="opt-badge">Recommended</div>
-        <h4>🚙 Your rental SUV</h4>
-        <p>If you kept the SUV, just drive it back — ~25 min via I-35E → TX-183 W to the DFW rental return, then the terminal shuttle. Fill the tank near the airport to skip the refuel fee.</p>
-        <div class="opt-cost">included in rental · leave 1:15 PM</div>
+        <div class="opt-badge">Your plan</div>
+        <h4>⚡ Drive the Mach-E back</h4>
+        <p>Drop-off is booked for 2:30 PM at DFW — but your flight is 3:30, so that's tight. <strong>Aim to reach the Budget return by ~2:00 PM.</strong> ~25 min from Bishop Arts via TX-183 W, then the terminal shuttle to Terminal D. Recharge on the way (or pre-pay) so you're not hit with the EV refuel fee.</p>
+        <div class="opt-cost">✅ Booked · return by 2:00 to be safe</div>
       </div>
       <div class="transport-opt">
         <h4>🚕 Uber / Lyft</h4>
@@ -1054,7 +1121,8 @@
           <div class="day-date">Fly in · Stockyards check-in</div>
         </div>
         <ul class="schedule">
-          <li><span class="time">1:16 PM</span><span class="activity"><strong>Land at DFW · AA 2317</strong>Arrive Terminal D, Gate D22. Bags at claim D16. Head to the rental center (or your ride) and roll to the Stockyards, ~35 min.</span></li>
+          <li><span class="time">1:16 PM</span><span class="activity"><strong>Land at DFW · AA 2317</strong>Arrive Terminal D, Gate D22. Bags at claim D16.</span></li>
+          <li><span class="time">1:30 PM</span><span class="activity"><strong>Pick up the Budget Mach-E ⚡</strong>Terminal A shuttle to the rental center, grab the electric Ford Mustang Mach-E AWD (booking #728543547), then ~35 min to the Stockyards via I-35W N.</span></li>
           <li><span class="time">4:00 PM</span><span class="activity"><strong>Check into <a href="https://hoteldrover.com/" target="_blank">Hotel Drover</a></strong>Check-in opens 4:00 PM (conf# 6650258634). Drop bags. Pool or AC for an hour to reset from the heat.</span></li>
           <li><span class="time">7:00 PM</span><span class="activity"><strong>Dinner at <a href="https://www.joetgarcias.com/" target="_blank">Joe T. Garcia's</a></strong>Tex-Mex institution since 1935. Patio with fountains stays bearable after sundown. Cash only.<span class="meta">~$35 / person</span></span></li>
           <li><span class="time">10:00 PM</span><span class="activity"><strong>Nightcap at <a href="https://hoteldrover.com/dining/veranda-bar/" target="_blank">The Veranda</a></strong>Walk back to the Drover. Bourbon by the fire pits. Soft landing — tomorrow is the big one.</span></li>
@@ -1179,8 +1247,8 @@
           <li><span class="time">9:30 AM</span><span class="activity"><strong>Check out of HALL Arts + load the car</strong>Bags packed, coffee in hand. Today runs on a clock — the flight home is 3:30 PM, so no lingering.</span></li>
           <li><span class="time">10:00 AM</span><span class="activity"><strong>Drag brunch at The Trove (Bishop Arts)</strong>Sunday Funday drag brunch — book the <strong>first seating</strong>. Bishop Arts is the indie/cute neighborhood, ~10 min from downtown. À la carte menu, $15+ tickets. Eat, tip the queens, keep an eye on the clock.<span class="meta">⏰ Reserve earliest seating — you have a plane to catch</span></span></li>
           <li><span class="time">12:15 PM</span><span class="activity"><strong>Quick Bishop Arts stroll (optional)</strong>15 min of air-conditioned indie shops if you're ahead of schedule. Skip it if brunch ran long.</span></li>
-          <li><span class="time">1:15 PM</span><span class="activity"><strong>Drive to DFW</strong>~25 min from Bishop Arts. Return the SUV at the rental center, take the shuttle to Terminal D.</span></li>
-          <li><span class="time">2:45 PM</span><span class="activity"><strong>At the gate — DFW Terminal D</strong>Basic Economy, so no seat picked and you board last. Be through security with time to spare.</span></li>
+          <li><span class="time">1:15 PM</span><span class="activity"><strong>Drive to DFW + charge the Mach-E ⚡</strong>~25 min from Bishop Arts. Top up the battery on the way (or pre-pay Budget's recharge fee) so you don't get dinged. Return the car by ~2:00 PM — the drop-off is booked for 2:30 but that's tight before a 3:30 flight.</span></li>
+          <li><span class="time">2:30 PM</span><span class="activity"><strong>Budget return + shuttle to Terminal D</strong>Drop the Mach-E (booked 2:30 PM), hop the terminal shuttle. Basic Economy means no seat picked and you board last — move quick.</span></li>
           <li><span class="time">3:30 PM</span><span class="activity"><strong>Fly LAX · AA 2732</strong>Nonstop, lands LAX 4:39 PM. Sleep on the plane. You earned it.</span></li>
         </ul>
       </div>
@@ -1259,9 +1327,9 @@
             <td class="num featured">~$150<br><span style="font-size:11px;color:var(--gray-soft);">$299 ÷ 2</span></td>
           </tr>
           <tr>
-            <td>SUV rental + gas + parking</td>
-            <td class="num">To book</td>
-            <td class="num featured">~$100</td>
+            <td>Budget Mach-E rental (+ charging, parking)</td>
+            <td class="num">✅ Booked</td>
+            <td class="num featured">~$55<br><span style="font-size:11px;color:var(--gray-soft);">~$180 total ÷ 4 + charging</span></td>
           </tr>
           <tr>
             <td>Rodeo + Billy Bob's</td>
@@ -1296,7 +1364,7 @@
           <tr>
             <td>TOTAL per person</td>
             <td class="num">est.</td>
-            <td class="num featured">~$1,895</td>
+            <td class="num featured">~$1,850</td>
           </tr>
         </tbody>
       </table>
@@ -1317,10 +1385,10 @@
       <div class="check-item"><div class="check-num">✓</div><div><strong><a href="https://www.hallartshotel.com/" target="_blank">HALL Arts Hotel</a></strong><span class="desc">Jul 4 → 5 · Deluxe Queen · confirmed</span></div><span class="badge normal">Booked</span></div>
       <div class="check-item"><div class="check-num">1</div><div><strong><a href="https://silodallas.com/events" target="_blank">Vintage Culture @ SILO</a></strong><span class="desc">Sat Jul 4 · 9:00pm · 18+ · will sell out</span></div><span class="badge">Book today</span></div>
       <div class="check-item"><div class="check-num">2</div><div><strong><a href="https://www.cowtowncoliseum.com/" target="_blank">Stockyards Championship Rodeo</a></strong><span class="desc">Fri Jul 3 · 7:30pm · AXS · 4 seats, lower bowl if available</span></div><span class="badge">Book today</span></div>
-      <div class="check-item"><div class="check-num">3</div><div><strong>SUV rental at DFW</strong><span class="desc">Costco Travel or Autoslash · full-size SUV for 4 + bags · pick up on arrival Jul 2</span></div><span class="badge">Book today</span></div>
-      <div class="check-item"><div class="check-num">4</div><div><strong><a href="https://www.bowiehousehotel.com/dining/bricks-and-horses/" target="_blank">Bricks & Horses</a></strong><span class="desc">Fri Jul 3 · 5:30pm · OpenTable · party of 4</span></div><span class="badge normal">This week</span></div>
-      <div class="check-item"><div class="check-num">5</div><div><strong><a href="https://www.knifedallas.com/" target="_blank">Knife</a></strong><span class="desc">Sat Jul 4 · 6:30pm · OpenTable · party of 4 (early seating!)</span></div><span class="badge normal">This week</span></div>
-      <div class="check-item"><div class="check-num">6</div><div><strong>The Trove drag brunch</strong><span class="desc">Sun Jul 5 · FIRST seating · Eventbrite · Bishop Arts · you fly at 3:30pm</span></div><span class="badge normal">This week</span></div>
+      <div class="check-item"><div class="check-num">✓</div><div><strong>Budget rental car ⚡</strong><span class="desc">Ford Mustang Mach-E AWD · #728543547 · Jul 2 1:30pm → Jul 5 2:30pm · confirmed</span></div><span class="badge normal">Booked</span></div>
+      <div class="check-item"><div class="check-num">3</div><div><strong><a href="https://www.bowiehousehotel.com/dining/bricks-and-horses/" target="_blank">Bricks & Horses</a></strong><span class="desc">Fri Jul 3 · 5:30pm · OpenTable · party of 4</span></div><span class="badge normal">This week</span></div>
+      <div class="check-item"><div class="check-num">4</div><div><strong><a href="https://www.knifedallas.com/" target="_blank">Knife</a></strong><span class="desc">Sat Jul 4 · 6:30pm · OpenTable · party of 4 (early seating!)</span></div><span class="badge normal">This week</span></div>
+      <div class="check-item"><div class="check-num">5</div><div><strong>The Trove drag brunch</strong><span class="desc">Sun Jul 5 · FIRST seating · Eventbrite · Bishop Arts · you fly at 3:30pm</span></div><span class="badge normal">This week</span></div>
     </div>
   </div>
 </section>
@@ -1335,7 +1403,7 @@
       <div class="tip"><span class="tip-icon">👢</span><strong>Boots on Day 1</strong><p>If you don't own them, hit M.L. Leddy's or Maverick Western Wear Friday morning. You'll wear them all weekend and they make every photo better.</p></div>
       <div class="tip"><span class="tip-icon">💵</span><strong>Cash for Joe T's</strong><p>Joe T. Garcia's is cash only. Pull $200 before the trip and you're set for the whole weekend.</p></div>
       <div class="tip"><span class="tip-icon">👔</span><strong>Elevated Western works</strong><p>Hotel Drover, Bricks & Horses, HALL Arts, Knife — all OK with boots + button-down + jeans. No sneakers at the steakhouses.</p></div>
-      <div class="tip"><span class="tip-icon">🚕</span><strong>Uber Saturday night</strong><p>Park the SUV at HALL Arts and Uber to SILO + Cedar Springs. Don't drive. Don't even think about it.</p></div>
+      <div class="tip"><span class="tip-icon">🚕</span><strong>Uber Saturday night</strong><p>Park the Mach-E at HALL Arts (charge it overnight if they have a plug) and Uber to SILO + Cedar Springs. Don't drive. Don't even think about it.</p></div>
       <div class="tip"><span class="tip-icon">🎆</span><strong>Fireworks logistics</strong><p>Addison Kaboom Town parking is genuinely a nightmare — 500k people. Best play: skip it, catch July 4 fireworks from downtown Dallas near HALL Arts before heading to SILO.</p></div>
     </div>
   </div>
