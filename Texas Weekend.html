@@ -939,6 +939,54 @@
   <div class="scroll-cue">Scroll for the goods ↓</div>
 </section>
 
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="section-eyebrow">The Vibe</div>
+    <h2>Photo <span class="accent">gallery.</span></h2>
+    <p class="lead">A few frames from the crew. Tap any photo to blow it up; hit play on the clips.</p>
+
+    <div class="gallery-grid">
+      <figure class="g-item"><img src="assets/gallery/09-the-crew.jpg" alt="The crew out on the town" loading="lazy"></figure>
+      <figure class="g-item"><img src="assets/gallery/01-garden-patio.jpg" alt="Garden patio at night" loading="lazy"></figure>
+      <figure class="g-item g-video"><video controls preload="none" playsinline poster="assets/gallery/clip-01-poster.jpg"><source src="assets/gallery/clip-01.mp4" type="video/mp4"></video></figure>
+      <figure class="g-item"><img src="assets/gallery/07-pool-drinks.jpg" alt="Drinks in the pool" loading="lazy"></figure>
+      <figure class="g-item"><img src="assets/gallery/03-fountain-selfie.jpg" alt="Selfie by the fountain" loading="lazy"></figure>
+      <figure class="g-item"><img src="assets/gallery/06-loungers.jpg" alt="Poolside loungers" loading="lazy"></figure>
+      <figure class="g-item g-video"><video controls preload="none" playsinline poster="assets/gallery/clip-02-poster.jpg"><source src="assets/gallery/clip-02.mp4" type="video/mp4"></video></figure>
+      <figure class="g-item"><img src="assets/gallery/05-lawn-hang.jpg" alt="Hanging on the lawn" loading="lazy"></figure>
+      <figure class="g-item"><img src="assets/gallery/04-grass-kiss.jpg" alt="On the grass" loading="lazy"></figure>
+      <figure class="g-item"><img src="assets/gallery/02-patio-steps.jpg" alt="Lounging on the patio steps" loading="lazy"></figure>
+      <figure class="g-item g-video"><video controls preload="none" playsinline poster="assets/gallery/clip-03-poster.jpg"><source src="assets/gallery/clip-03.mp4" type="video/mp4"></video></figure>
+      <figure class="g-item"><img src="assets/gallery/08-booth-hat.jpg" alt="Cowboy hat in the booth" loading="lazy"></figure>
+      <figure class="g-item"><img src="assets/gallery/10-hat-onboard.jpg" alt="Hat on the plane" loading="lazy"></figure>
+      <figure class="g-item"><img src="assets/gallery/11-plane-water.jpg" alt="Hydrating on the flight" loading="lazy"></figure>
+    </div>
+  </div>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged photo">
+    <span class="lightbox-close" aria-label="Close">&times;</span>
+    <img src="" alt="Enlarged photo">
+  </div>
+</section>
+
+<script>
+  (function () {
+    var lb = document.getElementById('lightbox');
+    var lbImg = lb.querySelector('img');
+    document.querySelectorAll('.gallery-grid .g-item img').forEach(function (img) {
+      img.addEventListener('click', function () {
+        lbImg.src = img.src;
+        lb.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    function close() { lb.classList.remove('open'); lbImg.src = ''; document.body.style.overflow = ''; }
+    lb.addEventListener('click', close);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+  })();
+</script>
+
 <!-- PHOTO STRIP -->
 <section class="photo-strip">
   <div class="strip-grid">
@@ -1414,53 +1462,103 @@
   </div>
 </section>
 
-<!-- GALLERY -->
-<section class="gallery" id="gallery">
+<!-- BUDGET -->
+<section class="budget" id="budget">
   <div class="wrap">
-    <div class="section-eyebrow">The Vibe</div>
-    <h2>Photo <span class="accent">gallery.</span></h2>
-    <p class="lead">A few frames from the crew. Tap any photo to blow it up; hit play on the clips.</p>
-
-    <div class="gallery-grid">
-      <figure class="g-item"><img src="assets/gallery/09-the-crew.jpg" alt="The crew out on the town" loading="lazy"></figure>
-      <figure class="g-item"><img src="assets/gallery/01-garden-patio.jpg" alt="Garden patio at night" loading="lazy"></figure>
-      <figure class="g-item g-video"><video controls preload="none" playsinline poster="assets/gallery/clip-01-poster.jpg"><source src="assets/gallery/clip-01.mp4" type="video/mp4"></video></figure>
-      <figure class="g-item"><img src="assets/gallery/07-pool-drinks.jpg" alt="Drinks in the pool" loading="lazy"></figure>
-      <figure class="g-item"><img src="assets/gallery/03-fountain-selfie.jpg" alt="Selfie by the fountain" loading="lazy"></figure>
-      <figure class="g-item"><img src="assets/gallery/06-loungers.jpg" alt="Poolside loungers" loading="lazy"></figure>
-      <figure class="g-item g-video"><video controls preload="none" playsinline poster="assets/gallery/clip-02-poster.jpg"><source src="assets/gallery/clip-02.mp4" type="video/mp4"></video></figure>
-      <figure class="g-item"><img src="assets/gallery/05-lawn-hang.jpg" alt="Hanging on the lawn" loading="lazy"></figure>
-      <figure class="g-item"><img src="assets/gallery/04-grass-kiss.jpg" alt="On the grass" loading="lazy"></figure>
-      <figure class="g-item"><img src="assets/gallery/02-patio-steps.jpg" alt="Lounging on the patio steps" loading="lazy"></figure>
-      <figure class="g-item g-video"><video controls preload="none" playsinline poster="assets/gallery/clip-03-poster.jpg"><source src="assets/gallery/clip-03.mp4" type="video/mp4"></video></figure>
-      <figure class="g-item"><img src="assets/gallery/08-booth-hat.jpg" alt="Cowboy hat in the booth" loading="lazy"></figure>
-      <figure class="g-item"><img src="assets/gallery/10-hat-onboard.jpg" alt="Hat on the plane" loading="lazy"></figure>
-      <figure class="g-item"><img src="assets/gallery/11-plane-water.jpg" alt="Hydrating on the flight" loading="lazy"></figure>
+    <div class="section-eyebrow">The Math · Per Person, All In</div>
+    <h2>What it <span class="accent">runs you.</span></h2>
+    <p class="lead">Flights and both hotels are booked — those are locked. What's left to spend is tickets, dinners, the car and the fun money. Per-person estimate below assumes 4 people, two sharing each hotel room.</p>
+    <div class="budget-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th class="num">Status</th>
+            <th class="num">Per person</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Flights LAX ↔ DFW · American</td>
+            <td class="num">✅ Booked</td>
+            <td class="num featured">~$300</td>
+          </tr>
+          <tr>
+            <td>Hotel Drover · 2 nights Fort Worth</td>
+            <td class="num">✅ Booked</td>
+            <td class="num featured">~$650<br><span style="font-size:11px;color:var(--gray-soft);">room split 2 ways</span></td>
+          </tr>
+          <tr>
+            <td>HALL Arts · 1 night Dallas</td>
+            <td class="num">✅ Booked</td>
+            <td class="num featured">~$150<br><span style="font-size:11px;color:var(--gray-soft);">$299 ÷ 2</span></td>
+          </tr>
+          <tr>
+            <td>Budget Mach-E rental (+ charging, parking)</td>
+            <td class="num">✅ Booked</td>
+            <td class="num featured">~$55<br><span style="font-size:11px;color:var(--gray-soft);">~$180 total ÷ 4 + charging</span></td>
+          </tr>
+          <tr>
+            <td>Rodeo (booked) + Billy Bob's</td>
+            <td class="num">✅ Rodeo booked</td>
+            <td class="num featured">~$80<br><span style="font-size:11px;color:var(--gray-soft);">rodeo $124 ÷ 4 = $31pp</span></td>
+          </tr>
+          <tr>
+            <td>Vintage Culture @ SILO</td>
+            <td class="num">To book</td>
+            <td class="num featured">~$55</td>
+          </tr>
+          <tr>
+            <td>Friday dinner · Bricks & Horses</td>
+            <td class="num">To book</td>
+            <td class="num featured">~$120</td>
+          </tr>
+          <tr>
+            <td>Saturday dinner · Knife</td>
+            <td class="num">To book</td>
+            <td class="num featured">~$140</td>
+          </tr>
+          <tr>
+            <td>Other meals (Joe T's, brunch, lunches)</td>
+            <td class="num">—</td>
+            <td class="num featured">~$150</td>
+          </tr>
+          <tr>
+            <td>Drinks · covers · tips · cushion</td>
+            <td class="num">—</td>
+            <td class="num featured">~$150</td>
+          </tr>
+          <tr>
+            <td>TOTAL per person</td>
+            <td class="num">est.</td>
+            <td class="num featured">~$1,850</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-  </div>
-
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged photo">
-    <span class="lightbox-close" aria-label="Close">&times;</span>
-    <img src="" alt="Enlarged photo">
+    <p style="margin-top:24px;font-size:14px;color:var(--gray-soft);text-align:center;">Flight and hotel figures are estimates — your real booked amounts are on the confirmations. Swap Bricks & Horses / Knife for cheaper steaks to trim ~$150. Numbers rounded.</p>
   </div>
 </section>
 
-<script>
-  (function () {
-    var lb = document.getElementById('lightbox');
-    var lbImg = lb.querySelector('img');
-    document.querySelectorAll('.gallery-grid .g-item img').forEach(function (img) {
-      img.addEventListener('click', function () {
-        lbImg.src = img.src;
-        lb.classList.add('open');
-        document.body.style.overflow = 'hidden';
-      });
-    });
-    function close() { lb.classList.remove('open'); lbImg.src = ''; document.body.style.overflow = ''; }
-    lb.addEventListener('click', close);
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
-  })();
-</script>
+<!-- CHECKLIST -->
+<section class="checklist" id="checklist">
+  <div class="wrap">
+    <div class="section-eyebrow">Book-Now Checklist</div>
+    <h2>Flights + hotels done. <span class="accent">Now the fun stuff.</span></h2>
+    <p class="lead">The big rocks are locked. What's left sells out for July 4 weekend — Vintage Culture is the hardest stop, so handle that first.</p>
+    <div class="check-grid">
+      <div class="check-item"><div class="check-num">✓</div><div><strong>Flights LAX ↔ DFW · American</strong><span class="desc">AA 2317 out Thu Jul 2 · AA 2732 back Sun Jul 5 · confirmed</span></div><span class="badge normal">Booked</span></div>
+      <div class="check-item"><div class="check-num">✓</div><div><strong><a href="https://hoteldrover.com/" target="_blank">Hotel Drover</a></strong><span class="desc">Jul 2 → 4 · Conf# 6650258634 · confirmed</span></div><span class="badge normal">Booked</span></div>
+      <div class="check-item"><div class="check-num">✓</div><div><strong><a href="https://www.hallartshotel.com/" target="_blank">HALL Arts Hotel</a></strong><span class="desc">Jul 4 → 5 · Deluxe Queen · confirmed</span></div><span class="badge normal">Booked</span></div>
+      <div class="check-item"><div class="check-num">✓</div><div><strong><a href="https://www.cowtowncoliseum.com/" target="_blank">Stockyards Championship Rodeo</a></strong><span class="desc">Sat Jul 4 · 1:30pm matinee · AXS order #2679764 · confirmed</span></div><span class="badge normal">Booked</span></div>
+      <div class="check-item"><div class="check-num">✓</div><div><strong>Budget rental car ⚡</strong><span class="desc">Ford Mustang Mach-E AWD · #728543547 · Jul 2 1:30pm → Jul 5 2:30pm · confirmed</span></div><span class="badge normal">Booked</span></div>
+      <div class="check-item"><div class="check-num">1</div><div><strong><a href="https://silodallas.com/events" target="_blank">Vintage Culture @ SILO</a></strong><span class="desc">Sat Jul 4 · 9:00pm · 18+ · will sell out</span></div><span class="badge">Book today</span></div>
+      <div class="check-item"><div class="check-num">2</div><div><strong><a href="https://www.bowiehousehotel.com/dining/bricks-and-horses/" target="_blank">Bricks & Horses</a></strong><span class="desc">Fri Jul 3 · 5:30pm · OpenTable · party of 4</span></div><span class="badge normal">This week</span></div>
+      <div class="check-item"><div class="check-num">3</div><div><strong><a href="https://www.knifedallas.com/" target="_blank">Knife</a></strong><span class="desc">Sat Jul 4 · 6:30pm · OpenTable · party of 4 (early seating!)</span></div><span class="badge normal">This week</span></div>
+      <div class="check-item"><div class="check-num">4</div><div><strong>Rose Room @ S4 (drag)</strong><span class="desc">Sat Jul 4 late · cover at the door · your drag moment (Sunday brunch won't fit the flight)</span></div><span class="badge normal">Just show up</span></div>
+    </div>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer>
