@@ -5,11 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Texas 4th of July — Stockyards + Dallas</title>
 <meta property="og:title" content="Texas 4th of July — Stockyards + Dallas (Jul 2–5, 2026)">
-<meta property="og:description" content="A 4th of July weekend in Texas. Rodeo, fireworks, Vintage Culture, Rose Room drag.">
+<meta property="og:description" content="A 4th of July weekend in Texas. Rodeo, honky-tonks, the Rose Room, and the whole Cedar Springs strip.">
 <meta property="og:image" content="https://www.fortworthstockyards.org/sites/default/files/2022-04/FW%20Herd%20drive%20under%20sign%2013x19%20print%20no%20logo-_0.jpeg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&family=Rye&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <style>
   :root {
     --burnt: #8B3A1B;
@@ -453,7 +454,7 @@
   .fireworks-callout .meta-line span { background: rgba(0,0,0,0.3); padding: 6px 14px; border-radius: 100px; }
   .fireworks-callout a { color: white; border-bottom: 1px solid rgba(255,255,255,0.5); }
 
-  /* PARTY CALLOUT (Vintage Culture) */
+  /* PARTY CALLOUT (Cedar Springs) */
   .party-callout {
     position: relative;
     color: white;
@@ -464,7 +465,7 @@
   }
   .party-callout-bg {
     position: absolute; inset: 0;
-    background-image: url('https://silodallas.com/og-image.png');
+    background-image: url('assets/gallery/32-pool-couple.jpg');
     background-size: cover;
     background-position: center;
     filter: brightness(0.4) saturate(1.2);
@@ -814,46 +815,128 @@
 
   /* GALLERY */
   .gallery { background: linear-gradient(180deg, var(--cream) 0%, var(--paper) 100%); }
-  .gallery-grid {
-    margin-top: 40px;
-    column-count: 4;
-    column-gap: 14px;
+  .dl-all-wrap { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 22px; }
+  .dl-all-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 700;
+    letter-spacing: 0.02em; color: var(--cream);
+    background: var(--burnt); border: none; border-radius: 999px;
+    padding: 12px 22px; cursor: pointer;
+    box-shadow: 0 4px 16px rgba(139,58,27,0.28);
+    transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
   }
-  @media (max-width: 980px) { .gallery-grid { column-count: 3; } }
-  @media (max-width: 680px) { .gallery-grid { column-count: 2; column-gap: 10px; } }
+  .dl-all-btn:hover:not(:disabled) { background: var(--burnt-deep); transform: translateY(-2px); box-shadow: 0 8px 22px rgba(139,58,27,0.34); }
+  .dl-all-btn:disabled { opacity: 0.72; cursor: progress; }
+  .dl-all-btn .dl-ico { font-size: 16px; line-height: 1; }
+  .dl-note { font-size: 12.5px; color: var(--gray-soft); }
+  .gallery-grid { margin-top: 44px; }
+  .g-day-group + .g-day-group { margin-top: 54px; }
+  .g-day-head {
+    display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;
+    padding-bottom: 12px; margin-bottom: 6px;
+    border-bottom: 2px solid rgba(139,58,27,0.18);
+  }
+  .g-day-badge {
+    font-family: 'Rye', 'Playfair Display', serif;
+    font-size: 30px; line-height: 1;
+  }
+  .g-day-badge[data-day="Thu"] { color: #b98a3e; }
+  .g-day-badge[data-day="Fri"] { color: var(--burnt); }
+  .g-day-badge[data-day="Sat"] { color: var(--usa-red); }
+  .g-day-badge[data-day="Sun"] { color: var(--usa-blue); }
+  .g-day-sub {
+    font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray-soft);
+  }
+  .g-day-story {
+    font-size: 15.5px; color: var(--gray); max-width: 64ch;
+    margin: 12px 0 22px; line-height: 1.6;
+  }
+  .g-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+  }
+  @media (max-width: 680px) { .g-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; } }
   .g-item {
-    margin: 0 0 14px;
-    break-inside: avoid;
-    border-radius: 12px;
+    margin: 0;
+    border-radius: 6px;
     overflow: hidden;
-    box-shadow: var(--shadow);
     background: #2a1810;
     line-height: 0;
     position: relative;
+    padding: 7px;
+    background-color: var(--paper);
+    box-shadow: 0 2px 4px rgba(31,26,23,0.10), 0 10px 26px rgba(31,26,23,0.10);
+    border: 1px solid rgba(139,58,27,0.14);
+    transition: transform 0.35s cubic-bezier(.2,.7,.2,1), box-shadow 0.35s ease;
   }
-  @media (max-width: 680px) { .g-item { margin-bottom: 10px; } }
+  .g-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(31,26,23,0.14), 0 20px 44px rgba(31,26,23,0.22);
+    z-index: 3;
+  }
+  .g-media {
+    position: relative;
+    border-radius: 3px;
+    overflow: hidden;
+    background: #2a1810;
+    line-height: 0;
+  }
+  @media (max-width: 680px) { .g-item { padding: 5px; } }
+
+  /* day chip — always visible, color-coded */
+  .g-day {
+    position: absolute;
+    top: 9px; left: 9px;
+    z-index: 3;
+    padding: 4px 9px;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.09em; text-transform: uppercase;
+    color: #fff; border-radius: 999px;
+    background: var(--gray);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+    pointer-events: none;
+  }
+  .g-day[data-day="Thu"] { background: var(--tan); color: #3a2a12; }
+  .g-day[data-day="Fri"] { background: var(--burnt); }
+  .g-day[data-day="Sat"] { background: var(--usa-red); }
+  .g-day[data-day="Sun"] { background: var(--usa-blue); }
+
+  /* caption — hidden, slides up on hover */
   .g-tag {
     position: absolute;
     left: 0; right: 0; bottom: 0;
     z-index: 2;
-    padding: 20px 12px 8px;
+    padding: 26px 12px 10px;
     font-family: 'Inter', sans-serif;
-    font-size: 11.5px; font-weight: 600; line-height: 1.2;
-    letter-spacing: 0.02em;
+    font-size: 11.5px; font-weight: 600; line-height: 1.25;
+    letter-spacing: 0.01em;
     color: #fff;
-    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+    background: linear-gradient(180deg, rgba(31,26,23,0) 0%, rgba(31,26,23,0.82) 100%);
     pointer-events: none;
     text-shadow: 0 1px 3px rgba(0,0,0,0.55);
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
   }
+  .g-item:hover .g-tag { opacity: 1; transform: translateY(0); }
+  @media (hover: none) { .g-tag { opacity: 1; transform: none; } }
+
   .g-item img {
-    width: 100%; height: auto;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
     display: block;
     cursor: zoom-in;
-    transition: transform 0.4s, filter 0.2s;
+    border-radius: 3px;
+    filter: saturate(0.9) contrast(1.02);
+    transition: transform 0.5s cubic-bezier(.2,.7,.2,1), filter 0.35s ease;
     image-orientation: from-image;
   }
-  .g-item img:hover { transform: scale(1.03); }
-  .g-item video { width: 100%; height: auto; display: block; background: #000; cursor: pointer; }
+  .g-item:hover img { transform: scale(1.05); filter: saturate(1.08) contrast(1.03); }
+  .g-item video { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; background: #000; cursor: pointer; border-radius: 3px; }
 
   .lightbox {
     position: fixed; inset: 0; z-index: 300;
@@ -916,11 +999,6 @@
 </head>
 <body>
 
-<!-- WARNING BAR -->
-<div class="warning-bar">
-  🤠 <strong>Flights &amp; hotels are BOOKED.</strong> American Airlines LAX↔DFW · Hotel Drover · HALL Arts Hotel. This is the locked-in plan — Jul 2–5, 2026.
-</div>
-
 <!-- JUMP NAV -->
 <nav class="jump-nav">
   <div class="jump-inner">
@@ -928,7 +1006,6 @@
     <div class="jump-links">
       <a href="#itinerary">Itinerary</a>
       <a href="#gallery">Gallery</a>
-      <a href="#travel">Travel</a>
       <a href="#hotels">Hotels</a>
       <a href="#history">History</a>
       <a href="#maps">Maps</a>
@@ -942,12 +1019,12 @@
   <div class="hero-overlay"></div>
   <div class="hero-inner">
     <div class="hero-eyebrow">4th of July in Texas</div>
-    <h1>Boots, <span class="red">fireworks</span><br>& Vintage <span class="accent">Culture</span></h1>
-    <p class="hero-tagline">Fort Worth Stockyards. Stockyards rodeo. Top-5-in-America fireworks. The biggest house DJ on the planet at SILO. The Rose Room to cap it.</p>
+    <h1>Make Texas <span class="red">sexy</span><br>&amp; <span class="accent">gay</span> again</h1>
+    <p class="hero-tagline">Fort Worth Stockyards. The rodeo on the Fourth. Honky-tonks, boots and steamed straw hats — then Cedar Springs and the Rose Room to cap it all off.</p>
     <div class="hero-meta">
       <div class="hero-chip"><strong>Thu Jul 2</strong> — Sun Jul 5, 2026</div>
-      <div class="hero-chip"><strong>American Airlines</strong> · LAX ↔ DFW · booked</div>
-      <div class="hero-chip"><strong>Drover</strong> + <strong>HALL Arts</strong> · both booked</div>
+      <div class="hero-chip"><strong>American Airlines</strong> · LAX ↔ DFW</div>
+      <div class="hero-chip"><strong>Hotel Drover</strong> + <strong>HALL Arts</strong></div>
     </div>
   </div>
   <div class="scroll-cue">Scroll for the goods ↓</div>
@@ -960,7 +1037,16 @@
     <h2>Photo <span class="accent">gallery.</span></h2>
     <p class="lead">The whole weekend in order, Thursday to Sunday — each shot tagged with where it was taken. Tap any photo to blow it up; hit play on the clips.</p>
 
+    <div class="dl-all-wrap">
+      <button id="dl-all" class="dl-all-btn" type="button"><span class="dl-ico">⬇</span><span class="dl-label">Download all photos</span></button>
+      <span class="dl-note">Zips every shot &amp; clip straight to your device</span>
+    </div>
+
     <div class="gallery-grid">
+      <div class="g-day-group" id="day-thu">
+        <div class="g-day-head"><span class="g-day-badge" data-day="Thu">Thursday</span><span class="g-day-sub">July 2 &middot; Land &amp; ease in</span></div>
+        <p class="g-day-story">Wheels down in Texas. Straight off the plane to the Drover pool, then margaritas and fountains in the garden at Joe T. Garcia's.</p>
+        <div class="g-grid">
       <figure class="g-item g-video"><video controls preload="none" playsinline poster="assets/gallery/clip-01-poster.jpg"><source src="assets/gallery/clip-01.mp4" type="video/mp4"></video><figcaption class="g-tag">Thu · Leaving LAX</figcaption></figure>
       <figure class="g-item"><img src="assets/gallery/10-hat-onboard.jpg" alt="Hat on the plane" loading="lazy"><figcaption class="g-tag">Thu · On the plane</figcaption></figure>
       <figure class="g-item"><img src="assets/gallery/11-plane-water.jpg" alt="Hydrating on the flight" loading="lazy"><figcaption class="g-tag">Thu · On the plane</figcaption></figure>
@@ -976,6 +1062,12 @@
       <figure class="g-item"><img src="assets/gallery/03-fountain-selfie.jpg" alt="Selfie by the fountain" loading="lazy"><figcaption class="g-tag">Thu · Joe T. Garcia's</figcaption></figure>
       <figure class="g-item"><img src="assets/gallery/05-lawn-hang.jpg" alt="Hanging on the lawn" loading="lazy"><figcaption class="g-tag">Thu · Joe T. Garcia's</figcaption></figure>
       <figure class="g-item"><img src="assets/gallery/09-the-crew.jpg" alt="The crew out on the town" loading="lazy"><figcaption class="g-tag">Thu · Fort Worth</figcaption></figure>
+        </div>
+      </div>
+      <div class="g-day-group" id="day-fri">
+        <div class="g-day-head"><span class="g-day-badge" data-day="Fri">Friday</span><span class="g-day-sub">July 3 &middot; Cattle drive &amp; honky-tonks</span></div>
+        <p class="g-day-story">The longhorns down Exchange Avenue in the morning heat, BBQ, straw hats steamed to fit — then a full night on the strip: the White Elephant, Billy Bob's, and neon cowboys.</p>
+        <div class="g-grid">
       <figure class="g-item"><img src="assets/gallery/12-stockyards-sign.jpg" alt="Under the Fort Worth Stockyards sign" loading="lazy"><figcaption class="g-tag">Fri · Fort Worth Stockyards</figcaption></figure>
       <figure class="g-item"><img src="assets/gallery/25-cowboy-motel.jpg" alt="Cowboy Motel photo backdrop" loading="lazy"><figcaption class="g-tag">Fri · Fort Worth Stockyards</figcaption></figure>
       <figure class="g-item"><img src="assets/gallery/26-outfit-mirror.jpg" alt="Outfit check in the mirror" loading="lazy"><figcaption class="g-tag">Fri · Hotel Drover</figcaption></figure>
@@ -995,6 +1087,12 @@
       <figure class="g-item"><img src="assets/gallery/14-neon-cowboy.jpg" alt="Under the neon cowboy" loading="lazy"><figcaption class="g-tag">Fri · Fort Worth Stockyards</figcaption></figure>
       <figure class="g-item"><img src="assets/gallery/13-neon-cowboy-kiss.jpg" alt="Kiss under the neon cowboy" loading="lazy"><figcaption class="g-tag">Fri · Fort Worth Stockyards</figcaption></figure>
       <figure class="g-item g-video"><video controls preload="none" playsinline poster="assets/gallery/clip-04-poster.jpg"><source src="assets/gallery/clip-04.mp4" type="video/mp4"></video><figcaption class="g-tag">Fri · Fort Worth Stockyards</figcaption></figure>
+        </div>
+      </div>
+      <div class="g-day-group" id="day-sat">
+        <div class="g-day-head"><span class="g-day-badge" data-day="Sat">Saturday</span><span class="g-day-sub">July 4 &middot; The Fourth</span></div>
+        <p class="g-day-story">Independence Day. Slow Drover mornings, the Championship Rodeo in the coliseum, then east to Dallas for the rooftop pool and the skyline at HALL Arts.</p>
+        <div class="g-grid">
       <figure class="g-item"><img src="assets/gallery/37-drover-courtyard.jpg" alt="Hotel Drover courtyard" loading="lazy"><figcaption class="g-tag">Sat · Hotel Drover</figcaption></figure>
       <figure class="g-item"><img src="assets/gallery/39-drover-sign.jpg" alt="In front of the Drover sign" loading="lazy"><figcaption class="g-tag">Sat · Hotel Drover</figcaption></figure>
       <figure class="g-item"><img src="assets/gallery/34-drover-truck.jpg" alt="Hotel Drover pink truck" loading="lazy"><figcaption class="g-tag">Sat · Hotel Drover</figcaption></figure>
@@ -1013,8 +1111,16 @@
       <figure class="g-item"><img src="assets/gallery/33-bw-portrait.jpg" alt="Black and white portrait" loading="lazy"><figcaption class="g-tag">Sat · HALL Arts, Dallas</figcaption></figure>
       <figure class="g-item"><img src="assets/gallery/32-pool-couple.jpg" alt="Poolside with the skyline" loading="lazy"><figcaption class="g-tag">Sat · HALL Arts, Dallas</figcaption></figure>
       <figure class="g-item"><img src="assets/gallery/27-dallas-pool.jpg" alt="Rooftop pool, Dallas skyline" loading="lazy"><figcaption class="g-tag">Sat · HALL Arts, Dallas</figcaption></figure>
+        </div>
+      </div>
+      <div class="g-day-group" id="day-sun">
+        <div class="g-day-head"><span class="g-day-badge" data-day="Sun">Sunday</span><span class="g-day-sub">July 5 &middot; Wheels up</span></div>
+        <p class="g-day-story">One last full cowboy fit for the airport, and wheels up home.</p>
+        <div class="g-grid">
       <figure class="g-item g-video"><video controls preload="none" playsinline poster="assets/gallery/clip-11-poster.jpg"><source src="assets/gallery/clip-11.mp4" type="video/mp4"></video><figcaption class="g-tag">Sun · Dallas</figcaption></figure>
       <figure class="g-item"><img src="assets/gallery/28-airport-cowboy.jpg" alt="Full cowboy fit at the airport" loading="lazy"><figcaption class="g-tag">Sun · Heading home</figcaption></figure>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -1026,6 +1132,14 @@
 
 <script>
   (function () {
+    // Photos are grouped by day already — strip the "Day · " prefix, keep the place.
+    document.querySelectorAll('.gallery-grid .g-item .g-tag').forEach(function (tag) {
+      var parts = tag.textContent.split('·');
+      if (parts.length > 1 && /^(Thu|Fri|Sat|Sun)$/.test(parts[0].trim())) {
+        tag.textContent = parts.slice(1).join('·').trim();
+      }
+    });
+
     var lb = document.getElementById('lightbox');
     var lbImg = lb.querySelector('img');
     document.querySelectorAll('.gallery-grid .g-item img').forEach(function (img) {
@@ -1038,6 +1152,40 @@
     function close() { lb.classList.remove('open'); lbImg.src = ''; document.body.style.overflow = ''; }
     lb.addEventListener('click', close);
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+
+    // Download all — zip every gallery photo (and clip) client-side
+    var dlBtn = document.getElementById('dl-all');
+    if (dlBtn) {
+      var label = dlBtn.querySelector('.dl-label');
+      dlBtn.addEventListener('click', async function () {
+        if (typeof JSZip === 'undefined') { label.textContent = 'Still loading — try again'; setTimeout(function(){ label.textContent = 'Download all photos'; }, 2000); return; }
+        var srcs = [];
+        document.querySelectorAll('.gallery-grid .g-item img').forEach(function (i) { var s = i.getAttribute('src'); if (s) srcs.push(s); });
+        document.querySelectorAll('.gallery-grid .g-item video source').forEach(function (s) { var u = s.getAttribute('src'); if (u) srcs.push(u); });
+        var original = 'Download all photos';
+        dlBtn.disabled = true;
+        var zip = new JSZip(), ok = 0;
+        for (var k = 0; k < srcs.length; k++) {
+          label.textContent = 'Zipping… ' + (k + 1) + '/' + srcs.length;
+          try {
+            var resp = await fetch(srcs[k]);
+            if (!resp.ok) continue;
+            zip.file(srcs[k].split('/').pop(), await resp.blob());
+            ok++;
+          } catch (e) { /* skip anything that won't fetch */ }
+        }
+        if (!ok) { label.textContent = 'Nothing to download'; setTimeout(function(){ label.textContent = original; dlBtn.disabled = false; }, 2200); return; }
+        label.textContent = 'Building zip…';
+        var content = await zip.generateAsync({ type: 'blob' });
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(content);
+        a.download = 'texas-weekend-photos.zip';
+        document.body.appendChild(a); a.click();
+        setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 5000);
+        label.textContent = 'Downloaded ✓';
+        setTimeout(function () { label.textContent = original; dlBtn.disabled = false; }, 2500);
+      });
+    }
   })();
 </script>
 
@@ -1048,37 +1196,6 @@
     <img src="https://hoteldrover.com/app/uploads/2022/01/hannahwayphotography.com-19-1_frame2.png" alt="Hotel Drover Fort Worth Stockyards" loading="lazy">
     <img src="https://cdn.prod.website-files.com/66465bc913953ef7afdae8b3/6646699b5262f1e1f6518bec_home-hats.webp" alt="White Elephant Saloon hats on ceiling" loading="lazy">
     <img src="https://images.squarespace-cdn.com/content/v1/6387d4f5186c68589699c113/ef994de7-5944-484c-8f20-e3c0ebcc81a0/Girls+Night+Out-182.jpg" alt="HALL Arts Hotel Dallas Arts District" loading="lazy">
-  </div>
-</section>
-
-<!-- PITCH -->
-<section class="pitch">
-  <div class="wrap">
-    <div class="section-eyebrow">The Pitch</div>
-    <h2>Four days. <span class="accent">All-American chaos.</span></h2>
-    <p class="lead">Two nights in the Fort Worth Stockyards, one night on Cedar Springs in Dallas. The week of July 2–5 is genuinely a perfect storm: the <strong>Addison Kaboom Town</strong> fireworks (top-5 show in America, half a million people) on Friday, the <strong>Stockyards Championship Rodeo</strong> matinee on the 4th of July itself, and then <strong>VINTAGE CULTURE</strong> — one of the biggest house DJs on the planet — at SILO Dallas that same night.</p>
-    <div class="pitch-grid">
-      <div class="pitch-card">
-        <span class="icon">🤠</span>
-        <h4>Real-deal cowboy</h4>
-        <p>Longhorn cattle drive, July 4th rodeo matinee, the 1884 White Elephant Saloon.</p>
-      </div>
-      <div class="pitch-card">
-        <span class="icon">🎆</span>
-        <h4>Fireworks twice</h4>
-        <p>Addison Kaboom Town on Friday (one of America's best), Dallas skyline on the 4th.</p>
-      </div>
-      <div class="pitch-card">
-        <span class="icon">💃</span>
-        <h4>Vintage Culture</h4>
-        <p>Brazilian house DJ at SILO (DJ Mag Top 100 club) on July 4. Then Cedar Springs.</p>
-      </div>
-      <div class="pitch-card">
-        <span class="icon">👑</span>
-        <h4>Rose Room drag</h4>
-        <p>The world-famous drag theater at S4, Saturday night on Cedar Springs. Sequined and iconic.</p>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -1114,137 +1231,6 @@
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- BEAT THE HEAT -->
-<section class="heat">
-  <div class="wrap">
-    <div class="temp-display">
-      <div class="sun">🥵</div>
-      <div class="big">100°F</div>
-      <div class="small">Forecast peak — Sat Jul 4. Highs 98–100° all weekend, heat index 100–105°. Brutal noon–5pm.</div>
-    </div>
-    <div>
-      <div class="section-eyebrow">Beat the Heat</div>
-      <h2>Survive <span class="accent">July in Texas.</span></h2>
-      <p>This isn't the average — it's <strong>the actual forecast for your dates</strong>. Upper-90s to 100°, humid, with a stray thunderstorm possible Sunday. I built this itinerary so you're never outside between noon and 5pm without escape. Here's the forecast, then the rules:</p>
-
-      <div class="forecast-strip">
-        <div class="fc-day">
-          <div class="fc-name">Thu · Jul 2</div>
-          <div class="fc-icon">☀️</div>
-          <div class="fc-hi">98°</div>
-          <div class="fc-lo">low 78°</div>
-          <div class="fc-note">Sunny, hot &amp; humid</div>
-        </div>
-        <div class="fc-day">
-          <div class="fc-name">Fri · Jul 3</div>
-          <div class="fc-icon">🌤️</div>
-          <div class="fc-hi">99°</div>
-          <div class="fc-lo">low 80°</div>
-          <div class="fc-note">Sun &amp; clouds</div>
-        </div>
-        <div class="fc-day peak">
-          <div class="fc-name">Sat · Jul 4</div>
-          <div class="fc-icon">🔥</div>
-          <div class="fc-hi">100°</div>
-          <div class="fc-lo">low 80°</div>
-          <div class="fc-note">Partly sunny · hottest</div>
-        </div>
-        <div class="fc-day">
-          <div class="fc-name">Sun · Jul 5</div>
-          <div class="fc-icon">⛈️</div>
-          <div class="fc-hi">99°</div>
-          <div class="fc-lo">low 80°</div>
-          <div class="fc-note">20% stray storm</div>
-        </div>
-      </div>
-
-      <p style="font-size:14px; color:var(--gray-soft); margin-top:-4px;">Forecast as of Jul 2, 2026 (NWS / local DFW outlets) — check again the morning of each day.</p>
-      <ul class="heat-rules">
-        <li><strong>Mornings outside, midday inside.</strong> Cattle drive at 11:30am, then straight to AC for lunch and shopping.</li>
-        <li><strong>Pool is your weapon.</strong> Hotel Drover has an outdoor pool in Fort Worth, HALL Arts has a pool in Dallas. Use them 1–5pm both Friday and Saturday.</li>
-        <li><strong>Every night thing has AC.</strong> Rodeo (indoor coliseum), Billy Bob's, White Elephant, SILO, Cedar Springs bars — all climate-controlled.</li>
-        <li><strong>Pack: hat, sunglasses, sunscreen, big water bottle.</strong> Pull a Yeti or Stanley from the hotel mini-fridge before you head out.</li>
-        <li><strong>The cattle drive is short.</strong> 10 minutes of walking, 5 minutes of watching. Stand under an awning, snap photos, retreat to AC.</li>
-        <li><strong>Cabs/Ubers everywhere.</strong> Don't walk between Stockyards and downtown FW. Don't walk the strip in Dallas — Uber Cedar Springs.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- FLIGHTS & GROUND TRANSPORT -->
-<section class="transport" id="travel">
-  <div class="wrap">
-    <div class="section-eyebrow">Flights & Getting Around</div>
-    <h2>Wheels up, <span class="accent">wheels down.</span></h2>
-    <p class="lead">Both American Airlines flights are booked (Basic Economy — no seat selection, one personal item, board last). You've got the Mach-E for the whole trip, so getting around is just three drives — each with a Google Maps link below.</p>
-
-    <div class="flight-grid">
-      <div class="flight-card">
-        <div class="flight-tag">✈️ Outbound · Thu Jul 2</div>
-        <div class="flight-route"><span>LAX</span><span class="flight-arrow">→</span><span>DFW</span></div>
-        <div class="flight-times"><strong>8:00 AM</strong> → <strong>1:16 PM</strong></div>
-        <ul class="flight-detail">
-          <li><strong>AA 2317</strong> · Nonstop · 3h 16m · Basic Economy</li>
-          <li>Depart LAX <strong>Terminal B, Gate 159B</strong></li>
-          <li>Arrive DFW <strong>Terminal D, Gate D22</strong> · Baggage claim <strong>D16</strong></li>
-        </ul>
-      </div>
-      <div class="flight-card return">
-        <div class="flight-tag">✈️ Return · Sun Jul 5</div>
-        <div class="flight-route"><span>DFW</span><span class="flight-arrow">→</span><span>LAX</span></div>
-        <div class="flight-times"><strong>3:30 PM</strong> → <strong>4:39 PM</strong></div>
-        <ul class="flight-detail">
-          <li><strong>AA 2732</strong> · Nonstop · 3h 09m · Basic Economy</li>
-          <li>Depart DFW · 3:30 PM (be at the gate by 2:45 PM)</li>
-          <li>⚠️ Early flight — Sunday brunch has to be the first seating</li>
-        </ul>
-      </div>
-    </div>
-
-    <h3 style="margin-top:48px; margin-bottom:6px; color:var(--burnt);">🚗 Your ride · booked</h3>
-    <div class="car-card">
-      <div class="car-head">
-        <div>
-          <div class="ev-badge">⚡ Fully electric</div>
-          <h4>Ford Mustang Mach-E AWD <span style="font-weight:400; color:var(--gray-soft); font-size:16px;">or similar</span></h4>
-          <div class="car-vendor">Budget · Booking #728543547 · unlimited mileage</div>
-        </div>
-        <div class="car-specs">
-          <span>❄️ A/C</span><span>👤 5 seats</span><span>⚙️ Automatic</span>
-          <span>🧳 2 large + 1 small bag</span><span>🚪 4 doors</span>
-        </div>
-      </div>
-      <div class="car-legs">
-        <div class="car-leg">
-          <div class="car-leg-label">Pick-up</div>
-          <strong>Thu, Jul 2 · 1:30 PM</strong>
-          <div class="car-leg-loc">DFW International Airport · lands 1:16 PM, so you're right on time</div>
-        </div>
-        <div class="car-leg">
-          <div class="car-leg-label">Drop-off</div>
-          <strong>Sun, Jul 5 · 2:30 PM</strong>
-          <div class="car-leg-loc">DFW International Airport · ⚠️ only ~1 hr before your 3:30 flight — aim to arrive by 2:00</div>
-        </div>
-      </div>
-      <div class="ev-note">
-        ⚡ <strong>It's electric — plan one charge.</strong> The Mach-E AWD does ~250 mi on a full battery; your whole weekend (airport → Stockyards → Dallas → airport) runs ~150–200 mi, so one good top-up covers it. Charge overnight at the hotel if they have a station, or hit an Electrify America / ChargePoint DC fast charger. <strong>Return it charged</strong> (or pre-pay Budget's EV recharge fee) to avoid a surprise charge on drop-off.
-      </div>
-    </div>
-
-    <h3 style="margin-top:48px; margin-bottom:6px; color:var(--burnt);">🛬 Drive 1 · DFW → Hotel Drover (Thu, after you land)</h3>
-    <p style="font-size:15px; margin-bottom:16px;">Pick up the Mach-E at the DFW rental center (Terminal A shuttle) at 1:30 PM, then head to 200 Mule Alley Dr in the Fort Worth Stockyards — about <strong>28 miles / 35–40 min</strong> via TX-183 → TX-121 → I-35W N.</p>
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=Dallas+Fort+Worth+International+Airport&destination=Hotel+Drover+200+Mule+Alley+Dr+Fort+Worth+TX+76164&travelmode=driving" target="_blank" rel="noopener">📍 Directions: DFW → Hotel Drover</a>
-
-    <h3 style="margin-top:40px; margin-bottom:6px; color:var(--burnt);">🚗 Drive 2 · Fort Worth → Dallas (Sat, after the rodeo)</h3>
-    <p style="font-size:15px; margin-bottom:16px;">From the Stockyards to HALL Arts in the Dallas Arts District — about <strong>35 miles / 45 min</strong> east on I-30.</p>
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=Hotel+Drover+Fort+Worth+TX&destination=HALL+Arts+Hotel+1717+Leonard+St+Dallas+TX+75201&travelmode=driving" target="_blank" rel="noopener">📍 Directions: Stockyards → HALL Arts</a>
-
-    <h3 style="margin-top:40px; margin-bottom:6px; color:var(--burnt);">🛫 Drive 3 · HALL Arts → DFW (Sun, for the 3:30 flight)</h3>
-    <p style="font-size:15px; margin-bottom:16px;">Back to DFW — about <strong>20 miles / 25–30 min</strong>. Drop-off is booked for 2:30 PM, but <strong>aim to reach the Budget return by ~1:00 PM</strong> so you're not rushing a Basic-Economy boarding. Recharge on the way (or pre-pay) to dodge the EV refuel fee.</p>
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=HALL+Arts+Hotel+Dallas+TX&destination=Dallas+Fort+Worth+International+Airport+Rental+Car+Center&travelmode=driving" target="_blank" rel="noopener">📍 Directions: HALL Arts → DFW</a>
   </div>
 </section>
 
@@ -1316,13 +1302,13 @@
 
     <!-- SATURDAY — PARTY DAY + JULY 4 -->
     <div class="day-card party">
-      <div class="day-banner" style="background-image: url('https://silodallas.com/og-image.png');">
-        <div class="day-banner-label">Day Three · July 4 · DEFCON 1</div>
+      <div class="day-banner" style="background-image: url('assets/gallery/27-dallas-pool.jpg');">
+        <div class="day-banner-label">Day Three · July 4th</div>
       </div>
       <div class="day-body">
         <div class="day-header">
           <h3>Saturday, July 4 🇺🇸</h3>
-          <div class="day-date">Stockyards 4th · Rodeo matinee · Dallas glow-up · Vintage Culture · Cedar Springs</div>
+          <div class="day-date">Stockyards 4th · Rodeo matinee · Dallas glow-up · Cedar Springs</div>
         </div>
         <ul class="schedule">
           <li><span class="time">9:30 AM</span><span class="activity"><strong>Breakfast + pack up at the Drover</strong>Hydrate, fill the water gallon. <strong>Check-out is before 12:00 PM</strong> — load everything into the car this morning; you go straight to Dallas after the rodeo.</span></li>
@@ -1337,15 +1323,10 @@
 
         <div class="party-callout">
           <div class="party-callout-bg"></div>
-          <div class="section-eyebrow">The Crazy Party · July 4</div>
-          <h2>VINTAGE CULTURE @ <span class="accent">SILO</span></h2>
-          <p>Brazilian-born, globally one of the biggest names in house music right now. Plays Tomorrowland, Coachella, Ultra. <strong>And he's at SILO Dallas on July 4 itself.</strong> SILO is on DJ Mag's Top 100 Clubs — DAS sound, massive LED, special FX. Doors 9pm. Tickets ~$45. 18+. <strong>Will sell out — book this week.</strong></p>
+          <div class="section-eyebrow">The Night · July 4</div>
+          <h2>Cedar Springs after <span class="accent">dark</span> 👑</h2>
+          <p>Cedar Springs is the beating heart of gay Dallas — and the Fourth turned the whole strip loose. Two-stepping in cowboy hats, the world-famous Rose Room drag revue, and a nightcap crawl down The Strip.</p>
           <div class="party-stack">
-            <div class="party-stop">
-              <div class="stop-time">9:00 PM</div>
-              <h4>Vintage Culture @ SILO</h4>
-              <p>~15 min Uber from HALL Arts. <a href="https://silodallas.com/events" target="_blank">silodallas.com</a></p>
-            </div>
             <div class="party-stop">
               <div class="stop-time">12:30 AM</div>
               <h4>Round-Up Saloon</h4>
@@ -1354,7 +1335,7 @@
             <div class="party-stop">
               <div class="stop-time">1:30 AM</div>
               <h4>👑 S4 / Rose Room</h4>
-              <p><strong>This is your drag moment</strong> — the world-famous Rose Room, since Sunday brunch won't fit. <a href="https://www.station4dallas.com/" target="_blank">station4dallas.com</a></p>
+              <p><strong>The drag moment</strong> — the world-famous Rose Room revue at Station 4. <a href="https://www.station4dallas.com/" target="_blank">station4dallas.com</a></p>
             </div>
             <div class="party-stop">
               <div class="stop-time">2:30 AM</div>
@@ -1367,7 +1348,7 @@
         <div class="fireworks-callout">
           <div class="section-eyebrow">Bonus: July 4 Fireworks</div>
           <h2>Catch fireworks before you head out 🎆</h2>
-          <p>You're in the heart of downtown Dallas — the Arts District sits between Klyde Warren Park and the skyline, and July 4 fireworks (Fair Park / Reunion Tower area) go off ~9:30pm. <strong>Catch them from the HALL Arts pool deck or a rooftop nearby, then Uber to SILO for Vintage Culture.</strong> Best of both worlds.</p>
+          <p>You're in the heart of downtown Dallas — the Arts District sits between Klyde Warren Park and the skyline, and July 4 fireworks (Fair Park / Reunion Tower area) go off ~9:30pm. <strong>Catch them from the HALL Arts pool deck or a rooftop nearby, then Uber over to Cedar Springs.</strong> Best of both worlds.</p>
           <div class="meta-line">
             <span>📍 Dallas Arts District</span>
             <span>🎆 ~9:30pm Sat Jul 4</span>
@@ -1433,7 +1414,7 @@
         <div class="hotel-body">
           <h3>HALL Arts Hotel</h3>
           <div class="nights">✅ Booked · Dallas Arts District</div>
-          <p>Saturday-night base in downtown Dallas. Deluxe Queen Room with two queen beds and a city view. Pool, designer rooms, art-gallery calm. ~10–15 min Uber to SILO and Cedar Springs.</p>
+          <p>Saturday-night base in downtown Dallas. Deluxe Queen Room with two queen beds and a city view. Pool, designer rooms, art-gallery calm. ~10–15 min Uber to Cedar Springs.</p>
           <div class="rate">
             <strong>Check-in Sat Jul 4 → Check-out Sun Jul 5 · $299/night</strong><br>
             🛏️ Deluxe Queen · 2 queen beds · city view · free cancellation · booked via Booking.com
@@ -1479,7 +1460,6 @@
 
     <h3 style="margin-top:28px; margin-bottom:6px; color:var(--burnt);">🌆 Dallas</h3>
     <div class="map-list">
-      <a class="map-pin" href="https://www.google.com/maps/search/?api=1&query=SILO+Dallas+nightclub" target="_blank" rel="noopener">🎧 SILO (Vintage Culture)</a>
       <a class="map-pin" href="https://www.google.com/maps/search/?api=1&query=Knife+Steakhouse+Dallas+Mockingbird" target="_blank" rel="noopener">🥩 Knife</a>
       <a class="map-pin" href="https://www.google.com/maps/search/?api=1&query=Ellen's+Dallas" target="_blank" rel="noopener">🍳 Ellen's (Sun breakfast)</a>
       <a class="map-pin" href="https://www.google.com/maps/search/?api=1&query=Station+4+S4+Cedar+Springs+Dallas" target="_blank" rel="noopener">👑 S4 / Rose Room</a>
@@ -1502,126 +1482,11 @@
   </div>
 </section>
 
-<!-- TIPS -->
-<section class="tips">
-  <div class="wrap">
-    <div class="section-eyebrow">Pro Tips</div>
-    <h2>Things <span class="accent">you'll thank me for.</span></h2>
-    <div class="tip-grid">
-      <div class="tip"><span class="tip-icon">🥵</span><strong>100°F is real</strong><p>The forecast is upper-90s to 100° every day, heat index up to 105°. Drink water like it's your job. The midday pool blocks are not optional, they're survival.</p></div>
-      <div class="tip"><span class="tip-icon">👢</span><strong>Boots on Day 1</strong><p>If you don't own them, hit M.L. Leddy's or Maverick Western Wear Friday morning. You'll wear them all weekend and they make every photo better.</p></div>
-      <div class="tip"><span class="tip-icon">💵</span><strong>Cash for Joe T's</strong><p>Joe T. Garcia's is cash only. Pull $200 before the trip and you're set for the whole weekend.</p></div>
-      <div class="tip"><span class="tip-icon">👔</span><strong>Elevated Western works</strong><p>Hotel Drover, Bricks & Horses, HALL Arts, Knife — all OK with boots + button-down + jeans. No sneakers at the steakhouses.</p></div>
-      <div class="tip"><span class="tip-icon">🚕</span><strong>Uber Saturday night</strong><p>Park the Mach-E at HALL Arts (charge it overnight if they have a plug) and Uber to SILO + Cedar Springs. Don't drive. Don't even think about it.</p></div>
-      <div class="tip"><span class="tip-icon">🎆</span><strong>Fireworks logistics</strong><p>With the rodeo now on Saturday's matinee, Friday's Kaboom Town is on the table — but parking is a nightmare (500k people), so leave right after dinner and pre-book a lot. Not up for it? Skip it and just catch the July 4 Dallas skyline show near HALL Arts on Saturday.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- BUDGET -->
-<section class="budget" id="budget">
-  <div class="wrap">
-    <div class="section-eyebrow">The Math · Per Person, All In</div>
-    <h2>What it <span class="accent">runs you.</span></h2>
-    <p class="lead">Flights and both hotels are booked — those are locked. What's left to spend is tickets, dinners, the car and the fun money. Per-person estimate below assumes 4 people, two sharing each hotel room.</p>
-    <div class="budget-table">
-      <table>
-        <thead>
-          <tr>
-            <th>Item</th>
-            <th class="num">Status</th>
-            <th class="num">Per person</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Flights LAX ↔ DFW · American</td>
-            <td class="num">✅ Booked</td>
-            <td class="num featured">~$300</td>
-          </tr>
-          <tr>
-            <td>Hotel Drover · 2 nights Fort Worth</td>
-            <td class="num">✅ Booked</td>
-            <td class="num featured">~$650<br><span style="font-size:11px;color:var(--gray-soft);">room split 2 ways</span></td>
-          </tr>
-          <tr>
-            <td>HALL Arts · 1 night Dallas</td>
-            <td class="num">✅ Booked</td>
-            <td class="num featured">~$150<br><span style="font-size:11px;color:var(--gray-soft);">$299 ÷ 2</span></td>
-          </tr>
-          <tr>
-            <td>Budget Mach-E rental (+ charging, parking)</td>
-            <td class="num">✅ Booked</td>
-            <td class="num featured">~$55<br><span style="font-size:11px;color:var(--gray-soft);">~$180 total ÷ 4 + charging</span></td>
-          </tr>
-          <tr>
-            <td>Rodeo (booked) + Billy Bob's</td>
-            <td class="num">✅ Rodeo booked</td>
-            <td class="num featured">~$80<br><span style="font-size:11px;color:var(--gray-soft);">rodeo $124 ÷ 4 = $31pp</span></td>
-          </tr>
-          <tr>
-            <td>Vintage Culture @ SILO</td>
-            <td class="num">To book</td>
-            <td class="num featured">~$55</td>
-          </tr>
-          <tr>
-            <td>Friday dinner · Bricks & Horses</td>
-            <td class="num">To book</td>
-            <td class="num featured">~$120</td>
-          </tr>
-          <tr>
-            <td>Saturday dinner · Knife</td>
-            <td class="num">To book</td>
-            <td class="num featured">~$140</td>
-          </tr>
-          <tr>
-            <td>Other meals (Joe T's, brunch, lunches)</td>
-            <td class="num">—</td>
-            <td class="num featured">~$150</td>
-          </tr>
-          <tr>
-            <td>Drinks · covers · tips · cushion</td>
-            <td class="num">—</td>
-            <td class="num featured">~$150</td>
-          </tr>
-          <tr>
-            <td>TOTAL per person</td>
-            <td class="num">est.</td>
-            <td class="num featured">~$1,850</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p style="margin-top:24px;font-size:14px;color:var(--gray-soft);text-align:center;">Flight and hotel figures are estimates — your real booked amounts are on the confirmations. Swap Bricks & Horses / Knife for cheaper steaks to trim ~$150. Numbers rounded.</p>
-  </div>
-</section>
-
-<!-- CHECKLIST -->
-<section class="checklist" id="checklist">
-  <div class="wrap">
-    <div class="section-eyebrow">Book-Now Checklist</div>
-    <h2>Flights + hotels done. <span class="accent">Now the fun stuff.</span></h2>
-    <p class="lead">The big rocks are locked. What's left sells out for July 4 weekend — Vintage Culture is the hardest stop, so handle that first.</p>
-    <div class="check-grid">
-      <div class="check-item"><div class="check-num">✓</div><div><strong>Flights LAX ↔ DFW · American</strong><span class="desc">AA 2317 out Thu Jul 2 · AA 2732 back Sun Jul 5 · confirmed</span></div><span class="badge normal">Booked</span></div>
-      <div class="check-item"><div class="check-num">✓</div><div><strong><a href="https://hoteldrover.com/" target="_blank">Hotel Drover</a></strong><span class="desc">Jul 2 → 4 · Conf# 6650258634 · confirmed</span></div><span class="badge normal">Booked</span></div>
-      <div class="check-item"><div class="check-num">✓</div><div><strong><a href="https://www.hallartshotel.com/" target="_blank">HALL Arts Hotel</a></strong><span class="desc">Jul 4 → 5 · Deluxe Queen · confirmed</span></div><span class="badge normal">Booked</span></div>
-      <div class="check-item"><div class="check-num">✓</div><div><strong><a href="https://www.cowtowncoliseum.com/" target="_blank">Stockyards Championship Rodeo</a></strong><span class="desc">Sat Jul 4 · 1:30pm matinee · AXS order #2679764 · confirmed</span></div><span class="badge normal">Booked</span></div>
-      <div class="check-item"><div class="check-num">✓</div><div><strong>Budget rental car ⚡</strong><span class="desc">Ford Mustang Mach-E AWD · #728543547 · Jul 2 1:30pm → Jul 5 2:30pm · confirmed</span></div><span class="badge normal">Booked</span></div>
-      <div class="check-item"><div class="check-num">1</div><div><strong><a href="https://silodallas.com/events" target="_blank">Vintage Culture @ SILO</a></strong><span class="desc">Sat Jul 4 · 9:00pm · 18+ · will sell out</span></div><span class="badge">Book today</span></div>
-      <div class="check-item"><div class="check-num">2</div><div><strong><a href="https://www.bowiehousehotel.com/dining/bricks-and-horses/" target="_blank">Bricks & Horses</a></strong><span class="desc">Fri Jul 3 · 5:30pm · OpenTable · party of 4</span></div><span class="badge normal">This week</span></div>
-      <div class="check-item"><div class="check-num">3</div><div><strong><a href="https://www.knifedallas.com/" target="_blank">Knife</a></strong><span class="desc">Sat Jul 4 · 6:30pm · OpenTable · party of 4 (early seating!)</span></div><span class="badge normal">This week</span></div>
-      <div class="check-item"><div class="check-num">4</div><div><strong>Rose Room @ S4 (drag)</strong><span class="desc">Sat Jul 4 late · cover at the door · your drag moment (Sunday brunch won't fit the flight)</span></div><span class="badge normal">Just show up</span></div>
-    </div>
-  </div>
-</section>
-
 <!-- FOOTER -->
 <footer>
   <h3>Sources & Links</h3>
   <div class="sources">
     <a href="https://www.cowtowncoliseum.com/" target="_blank">Stockyards Rodeo · Jul 4 matinee</a>
-    <a href="https://silodallas.com/events" target="_blank">SILO Dallas · Vintage Culture Jul 4</a>
     <a href="https://www.billybobstexas.com/events" target="_blank">Billy Bob's July events</a>
     <a href="https://www.addisonkaboomtown.com/" target="_blank">Addison Kaboom Town</a>
     <a href="https://www.fortworthstockyards.org/events/happy-4th-july" target="_blank">Stockyards 4th of July</a>
