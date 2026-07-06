@@ -829,8 +829,22 @@
     box-shadow: var(--shadow);
     background: #2a1810;
     line-height: 0;
+    position: relative;
   }
   @media (max-width: 680px) { .g-item { margin-bottom: 10px; } }
+  .g-tag {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    z-index: 2;
+    padding: 20px 12px 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11.5px; font-weight: 600; line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: #fff;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+    pointer-events: none;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.55);
+  }
   .g-item img {
     width: 100%; height: auto;
     display: block;
@@ -944,51 +958,63 @@
   <div class="wrap">
     <div class="section-eyebrow">The Vibe</div>
     <h2>Photo <span class="accent">gallery.</span></h2>
-    <p class="lead">A few frames from the crew. Tap any photo to blow it up; hit play on the clips.</p>
+    <p class="lead">The whole weekend in order, Thursday to Sunday — each shot tagged with where it was taken. Tap any photo to blow it up; hit play on the clips.</p>
 
     <div class="gallery-grid">
-      <figure class="g-item"><img src="assets/gallery/12-stockyards-sign.jpg" alt="Under the Fort Worth Stockyards sign" loading="lazy"></figure>
-      <figure class="g-item"><img src="assets/gallery/09-the-crew.jpg" alt="The crew out on the town" loading="lazy"></figure>
-      <figure class="g-item"><img src="assets/gallery/13-neon-cowboy-kiss.jpg" alt="Kiss under the neon cowboy" loading="lazy"></figure>
-      <figure class="g-item g-video"><video controls preload="none" playsinline poster="assets/gallery/clip-06-poster.jpg"><source src="assets/gallery/clip-06.mp4" type="video/mp4"></video></figure>
-      <figure class="g-item"><img src="assets/gallery/29-rodeo.jpg" alt="At the Stockyards rodeo" loading="lazy"></figure>
-      <figure class="g-item"><img src="assets/gallery/27-dallas-pool.jpg" alt="Rooftop pool with the Dallas skyline" loading="lazy"></figure>
-      <figure class="g-item"><img src="assets/gallery/30-bbq-tray.jpg" alt="A loaded Texas BBQ tray" loading="lazy"></figure>
-      <figure class="g-item"><img src="assets/gallery/16-billy-bobs-sign.jpg" alt="Outside Billy Bob's Texas" loading="lazy"></figure>
-      <figure class="g-item"><img src="assets/gallery/32-pool-couple.jpg" alt="Poolside with the skyline" loading="lazy"></figure>
-      <figure class="g-item"><img src="assets/gallery/31-cowgirls-ahead.jpg" alt="Caution: Cowgirls Ahead" loading="lazy"></figure>
-      <figure class="g-item"><img src="assets/gallery/19-white-elephant-dance.jpg" alt="Dancing at the White Elephant Saloon" loading="lazy"></figure>
-      <figure class="g-item g-video"><video controls preload="none" playsinline poster="assets/gallery/clip-07-poster.jpg"><source src="assets/gallery/clip-07.mp4" type="video/mp4"></video></figure>
-      <figure class="g-item"><img src="assets/gallery/17-billy-bobs-2026.jpg" alt="Billy Bob's 2026 balloons" loading="lazy"></figure>
-      <figure class="g-item"><img src="assets/gallery/22-eat-neon.jpg" alt="Under the EAT neon" loading="lazy"></figure>
-      <figure class="g-item"><img src="assets/gallery/20-white-elephant.jpg" alt="White Elephant Saloon" loading="lazy"></figure>
-      <figure class="g-item g-video"><video controls preload="none" playsinline poster="assets/gallery/clip-08-poster.jpg"><source src="assets/gallery/clip-08.mp4" type="video/mp4"></video></figure>
-      <figure class="g-item"><img src="assets/gallery/25-cowboy-motel.jpg" alt="Cowboy Motel photo backdrop" loading="lazy"></figure>
-      <figure class="g-item"><img src="assets/gallery/21-bar-laugh.jpg" alt="Laughing at the bar" loading="lazy"></figure>
-      <figure class="g-item"><img src="assets/gallery/18-billy-bobs-balloons.jpg" alt="Billy Bob's balloons and neon" loading="lazy"></figure>
-      <figure class="g-item g-video"><video controls preload="none" playsinline poster="assets/gallery/clip-09-poster.jpg"><source src="assets/gallery/clip-09.mp4" type="video/mp4"></video></figure>
-      <figure class="g-item"><img src="assets/gallery/23-big-ass-fans.jpg" alt="Cooling off under the big fan" loading="lazy"></figure>
-      <figure class="g-item"><img src="assets/gallery/24-mirror-selfie.jpg" alt="Mirror selfie, boots on" loading="lazy"></figure>
-      <figure class="g-item"><img src="assets/gallery/26-outfit-mirror.jpg" alt="Outfit check in the mirror" loading="lazy"></figure>
-      <figure class="g-item"><img src="assets/gallery/01-garden-patio.jpg" alt="Garden patio at night" loading="lazy"></figure>
-      <figure class="g-item g-video"><video controls preload="none" playsinline poster="assets/gallery/clip-01-poster.jpg"><source src="assets/gallery/clip-01.mp4" type="video/mp4"></video></figure>
-      <figure class="g-item"><img src="assets/gallery/07-pool-drinks.jpg" alt="Drinks in the pool" loading="lazy"></figure>
-      <figure class="g-item"><img src="assets/gallery/03-fountain-selfie.jpg" alt="Selfie by the fountain" loading="lazy"></figure>
-      <figure class="g-item"><img src="assets/gallery/06-loungers.jpg" alt="Poolside loungers" loading="lazy"></figure>
-      <figure class="g-item g-video"><video controls preload="none" playsinline poster="assets/gallery/clip-02-poster.jpg"><source src="assets/gallery/clip-02.mp4" type="video/mp4"></video></figure>
-      <figure class="g-item"><img src="assets/gallery/14-neon-cowboy.jpg" alt="Smiling under the neon cowboy" loading="lazy"></figure>
-      <figure class="g-item g-video"><video controls preload="none" playsinline poster="assets/gallery/clip-04-poster.jpg"><source src="assets/gallery/clip-04.mp4" type="video/mp4"></video></figure>
-      <figure class="g-item"><img src="assets/gallery/15-garden-couple.jpg" alt="Couple in the garden" loading="lazy"></figure>
-      <figure class="g-item"><img src="assets/gallery/05-lawn-hang.jpg" alt="Hanging on the lawn" loading="lazy"></figure>
-      <figure class="g-item"><img src="assets/gallery/04-grass-kiss.jpg" alt="On the grass" loading="lazy"></figure>
-      <figure class="g-item"><img src="assets/gallery/33-bw-portrait.jpg" alt="Black and white portrait with a glass of wine" loading="lazy"></figure>
-      <figure class="g-item"><img src="assets/gallery/02-patio-steps.jpg" alt="Lounging on the patio steps" loading="lazy"></figure>
-      <figure class="g-item g-video"><video controls preload="none" playsinline poster="assets/gallery/clip-03-poster.jpg"><source src="assets/gallery/clip-03.mp4" type="video/mp4"></video></figure>
-      <figure class="g-item"><img src="assets/gallery/08-booth-hat.jpg" alt="Cowboy hat in the booth" loading="lazy"></figure>
-      <figure class="g-item g-video"><video controls preload="none" playsinline poster="assets/gallery/clip-05-poster.jpg"><source src="assets/gallery/clip-05.mp4" type="video/mp4"></video></figure>
-      <figure class="g-item"><img src="assets/gallery/28-airport-cowboy.jpg" alt="Full cowboy fit at the airport" loading="lazy"></figure>
-      <figure class="g-item"><img src="assets/gallery/10-hat-onboard.jpg" alt="Hat on the plane" loading="lazy"></figure>
-      <figure class="g-item"><img src="assets/gallery/11-plane-water.jpg" alt="Hydrating on the flight" loading="lazy"></figure>
+      <figure class="g-item g-video"><video controls preload="none" playsinline poster="assets/gallery/clip-01-poster.jpg"><source src="assets/gallery/clip-01.mp4" type="video/mp4"></video><figcaption class="g-tag">Thu · Leaving LAX</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/10-hat-onboard.jpg" alt="Hat on the plane" loading="lazy"><figcaption class="g-tag">Thu · On the plane</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/11-plane-water.jpg" alt="Hydrating on the flight" loading="lazy"><figcaption class="g-tag">Thu · On the plane</figcaption></figure>
+      <figure class="g-item g-video"><video controls preload="none" playsinline poster="assets/gallery/clip-02-poster.jpg"><source src="assets/gallery/clip-02.mp4" type="video/mp4"></video><figcaption class="g-tag">Thu · In the air</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/08-booth-hat.jpg" alt="Cowboy hat in the booth" loading="lazy"><figcaption class="g-tag">Thu · Fort Worth</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/06-loungers.jpg" alt="Poolside loungers" loading="lazy"><figcaption class="g-tag">Thu · Hotel Drover pool</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/07-pool-drinks.jpg" alt="Drinks in the pool" loading="lazy"><figcaption class="g-tag">Thu · Hotel Drover pool</figcaption></figure>
+      <figure class="g-item g-video"><video controls preload="none" playsinline poster="assets/gallery/clip-03-poster.jpg"><source src="assets/gallery/clip-03.mp4" type="video/mp4"></video><figcaption class="g-tag">Thu · Fort Worth Stockyards</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/04-grass-kiss.jpg" alt="On the grass" loading="lazy"><figcaption class="g-tag">Thu · Fort Worth</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/15-garden-couple.jpg" alt="Couple in the garden" loading="lazy"><figcaption class="g-tag">Thu · Joe T. Garcia's</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/01-garden-patio.jpg" alt="Garden patio at night" loading="lazy"><figcaption class="g-tag">Thu · Joe T. Garcia's</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/02-patio-steps.jpg" alt="Lounging on the patio steps" loading="lazy"><figcaption class="g-tag">Thu · Joe T. Garcia's</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/03-fountain-selfie.jpg" alt="Selfie by the fountain" loading="lazy"><figcaption class="g-tag">Thu · Joe T. Garcia's</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/05-lawn-hang.jpg" alt="Hanging on the lawn" loading="lazy"><figcaption class="g-tag">Thu · Joe T. Garcia's</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/09-the-crew.jpg" alt="The crew out on the town" loading="lazy"><figcaption class="g-tag">Thu · Fort Worth</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/12-stockyards-sign.jpg" alt="Under the Fort Worth Stockyards sign" loading="lazy"><figcaption class="g-tag">Fri · Fort Worth Stockyards</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/25-cowboy-motel.jpg" alt="Cowboy Motel photo backdrop" loading="lazy"><figcaption class="g-tag">Fri · Fort Worth Stockyards</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/26-outfit-mirror.jpg" alt="Outfit check in the mirror" loading="lazy"><figcaption class="g-tag">Fri · Hotel Drover</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/24-mirror-selfie.jpg" alt="Mirror selfie, boots on" loading="lazy"><figcaption class="g-tag">Fri · Hotel Drover</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/23-big-ass-fans.jpg" alt="Cooling off under the big fan" loading="lazy"><figcaption class="g-tag">Fri · Stockyards beer garden</figcaption></figure>
+      <figure class="g-item g-video"><video controls preload="none" playsinline poster="assets/gallery/clip-05-poster.jpg"><source src="assets/gallery/clip-05.mp4" type="video/mp4"></video><figcaption class="g-tag">Fri · Fort Worth Stockyards</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/22-eat-neon.jpg" alt="Under the EAT neon" loading="lazy"><figcaption class="g-tag">Fri · White Elephant Saloon</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/20-white-elephant.jpg" alt="White Elephant Saloon" loading="lazy"><figcaption class="g-tag">Fri · White Elephant Saloon</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/19-white-elephant-dance.jpg" alt="Dancing at the White Elephant" loading="lazy"><figcaption class="g-tag">Fri · White Elephant Saloon</figcaption></figure>
+      <figure class="g-item g-video"><video controls preload="none" playsinline poster="assets/gallery/clip-09-poster.jpg"><source src="assets/gallery/clip-09.mp4" type="video/mp4"></video><figcaption class="g-tag">Fri · White Elephant Saloon</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/16-billy-bobs-sign.jpg" alt="Outside Billy Bob's Texas" loading="lazy"><figcaption class="g-tag">Fri · Billy Bob's Texas</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/17-billy-bobs-2026.jpg" alt="Billy Bob's 2026 balloons" loading="lazy"><figcaption class="g-tag">Fri · Billy Bob's Texas</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/18-billy-bobs-balloons.jpg" alt="Billy Bob's balloons and neon" loading="lazy"><figcaption class="g-tag">Fri · Billy Bob's Texas</figcaption></figure>
+      <figure class="g-item g-video"><video controls preload="none" playsinline poster="assets/gallery/clip-08-poster.jpg"><source src="assets/gallery/clip-08.mp4" type="video/mp4"></video><figcaption class="g-tag">Fri · Billy Bob's Texas</figcaption></figure>
+      <figure class="g-item g-video"><video controls preload="none" playsinline poster="assets/gallery/clip-07-poster.jpg"><source src="assets/gallery/clip-07.mp4" type="video/mp4"></video><figcaption class="g-tag">Fri · Billy Bob's Texas</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/21-bar-laugh.jpg" alt="Laughing at the bar" loading="lazy"><figcaption class="g-tag">Fri · Fort Worth Stockyards</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/14-neon-cowboy.jpg" alt="Under the neon cowboy" loading="lazy"><figcaption class="g-tag">Fri · Fort Worth Stockyards</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/13-neon-cowboy-kiss.jpg" alt="Kiss under the neon cowboy" loading="lazy"><figcaption class="g-tag">Fri · Fort Worth Stockyards</figcaption></figure>
+      <figure class="g-item g-video"><video controls preload="none" playsinline poster="assets/gallery/clip-04-poster.jpg"><source src="assets/gallery/clip-04.mp4" type="video/mp4"></video><figcaption class="g-tag">Fri · Fort Worth Stockyards</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/37-drover-courtyard.jpg" alt="Hotel Drover courtyard" loading="lazy"><figcaption class="g-tag">Sat · Hotel Drover</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/39-drover-sign.jpg" alt="In front of the Drover sign" loading="lazy"><figcaption class="g-tag">Sat · Hotel Drover</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/34-drover-truck.jpg" alt="Hotel Drover pink truck" loading="lazy"><figcaption class="g-tag">Sat · Hotel Drover</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/38-drover-entrance.jpg" alt="Hotel Drover entrance" loading="lazy"><figcaption class="g-tag">Sat · Hotel Drover</figcaption></figure>
+      <figure class="g-item g-video"><video controls preload="none" playsinline poster="assets/gallery/clip-06-poster.jpg"><source src="assets/gallery/clip-06.mp4" type="video/mp4"></video><figcaption class="g-tag">Sat · Hotel Drover</figcaption></figure>
+      <figure class="g-item g-video"><video controls preload="none" playsinline poster="assets/gallery/clip-15-poster.jpg"><source src="assets/gallery/clip-15.mp4" type="video/mp4"></video><figcaption class="g-tag">Sat · Fort Worth Stockyards</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/35-cowtown-legends.jpg" alt="Cowtown Legends mural" loading="lazy"><figcaption class="g-tag">Sat · Cowtown Coliseum</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/31-cowgirls-ahead.jpg" alt="Caution: Cowgirls Ahead" loading="lazy"><figcaption class="g-tag">Sat · Fort Worth Stockyards</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/30-bbq-tray.jpg" alt="A loaded Texas BBQ tray" loading="lazy"><figcaption class="g-tag">Sat · Fort Worth BBQ</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/29-rodeo.jpg" alt="At the Stockyards rodeo" loading="lazy"><figcaption class="g-tag">Sat · Cowtown Coliseum</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/36-rodeo-flag.jpg" alt="July 4th at the rodeo" loading="lazy"><figcaption class="g-tag">Sat · Cowtown Coliseum · July 4</figcaption></figure>
+      <figure class="g-item g-video"><video controls preload="none" playsinline poster="assets/gallery/clip-14-poster.jpg"><source src="assets/gallery/clip-14.mp4" type="video/mp4"></video><figcaption class="g-tag">Sat · Cowtown Coliseum</figcaption></figure>
+      <figure class="g-item g-video"><video controls preload="none" playsinline poster="assets/gallery/clip-13-poster.jpg"><source src="assets/gallery/clip-13.mp4" type="video/mp4"></video><figcaption class="g-tag">Sat · Fort Worth Stockyards</figcaption></figure>
+      <figure class="g-item g-video"><video controls preload="none" playsinline poster="assets/gallery/clip-12-poster.jpg"><source src="assets/gallery/clip-12.mp4" type="video/mp4"></video><figcaption class="g-tag">Sat · Fort Worth Stockyards</figcaption></figure>
+      <figure class="g-item g-video"><video controls preload="none" playsinline poster="assets/gallery/clip-10-poster.jpg"><source src="assets/gallery/clip-10.mp4" type="video/mp4"></video><figcaption class="g-tag">Sat · Fort Worth Stockyards</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/33-bw-portrait.jpg" alt="Black and white portrait" loading="lazy"><figcaption class="g-tag">Sat · HALL Arts, Dallas</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/32-pool-couple.jpg" alt="Poolside with the skyline" loading="lazy"><figcaption class="g-tag">Sat · HALL Arts, Dallas</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/27-dallas-pool.jpg" alt="Rooftop pool, Dallas skyline" loading="lazy"><figcaption class="g-tag">Sat · HALL Arts, Dallas</figcaption></figure>
+      <figure class="g-item g-video"><video controls preload="none" playsinline poster="assets/gallery/clip-11-poster.jpg"><source src="assets/gallery/clip-11.mp4" type="video/mp4"></video><figcaption class="g-tag">Sun · Dallas</figcaption></figure>
+      <figure class="g-item"><img src="assets/gallery/28-airport-cowboy.jpg" alt="Full cowboy fit at the airport" loading="lazy"><figcaption class="g-tag">Sun · Heading home</figcaption></figure>
     </div>
   </div>
 
